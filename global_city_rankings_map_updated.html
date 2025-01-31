@@ -1,0 +1,2552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_54745aee7ccc8013f8262d328cbf5cbf {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed;
+            bottom: 10px; left: 10px; width: 260px; height: 220px;
+            background-color: white; z-index:9999; padding: 10px;
+            font-size:13px; border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3); line-height: 1.4;">
+<b>Scoring Key:</b><br>
+🔵 <b>Top 25%</b> = Bright Blue (#0074D9)<br>
+🟠 <b>Middle 50%</b> = Orange (#FF851B)<br>
+🔴 <b>Bottom 25%</b> = Bright Red (#FF4136)<br><br>
+<b>Ranking:</b> Number on each icon = City Rank<br>
+<b>Zoom In:</b> If you see a <span style="color:green"><b>Green Cluster</b></span>, zoom in to see individual rankings.<br><br>
+<a href='https://docs.google.com/document/d/1gGF7aD-_YyBHzCDrEha-GhtmWhWzt1KPkP98CEnQMkQ/edit?tab=t.0' target='_blank'><b>📊 View Scoring Methodology</b></a>
+</div>
+    
+            <div class="folium-map" id="map_54745aee7ccc8013f8262d328cbf5cbf" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_54745aee7ccc8013f8262d328cbf5cbf = L.map(
+                "map_54745aee7ccc8013f8262d328cbf5cbf",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 3,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f4354a1e27a41ab581e4d730faeb758e = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_54745aee7ccc8013f8262d328cbf5cbf);
+        
+    
+            var marker_cluster_aa3ee8408120548f42f98164336988d4 = L.markerClusterGroup(
+                {}
+            );
+            map_54745aee7ccc8013f8262d328cbf5cbf.addLayer(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var marker_b7f7d848b8767a9e2f5ac5249ff22dd1 = L.marker(
+                [38.7167, -9.1399],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_e35bd9cec81283685744dde0f76b1d68 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e1\u003c/div\u003e\n    "});
+            marker_b7f7d848b8767a9e2f5ac5249ff22dd1.setIcon(div_icon_e35bd9cec81283685744dde0f76b1d68);
+        
+    
+        var popup_5f443fc976755a05970602f9d2a6fe3f = L.popup({"maxWidth": 300});
+
+        
+            var html_caed4593d72eb6ca2084f5f58d38da44 = $(`<div id="html_caed4593d72eb6ca2084f5f58d38da44" style="width: 100.0%; height: 100.0%;">     <b>Lisbon</b><br>     <b>Total Score:</b> 82.0%<br>     <b>LGBTQ+ Safety:</b> 26.2%<br>     <b>Cost of Living:</b> 14.5%<br>     <b>Ease of Relocation:</b> 13.0%<br>     <b>Climate Resilience & Comfort:</b> 9.8%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 3.8%<br><br>     <a href='https://docs.google.com/document/d/1lOWz5JHAFCosFi43OYharpFqDGs0TWENa9f5aNCMYro/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_5f443fc976755a05970602f9d2a6fe3f.setContent(html_caed4593d72eb6ca2084f5f58d38da44);
+        
+
+        marker_b7f7d848b8767a9e2f5ac5249ff22dd1.bindPopup(popup_5f443fc976755a05970602f9d2a6fe3f)
+        ;
+
+        
+    
+    
+            var marker_0f4847682d6ebd5e9846286273a5a7b3 = L.marker(
+                [20.6534, -105.2253],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_8aed10abf6d1686a827221f8f1e80871 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e2\u003c/div\u003e\n    "});
+            marker_0f4847682d6ebd5e9846286273a5a7b3.setIcon(div_icon_8aed10abf6d1686a827221f8f1e80871);
+        
+    
+        var popup_2a62dc0451bd9c8cb6d44505affc4602 = L.popup({"maxWidth": 300});
+
+        
+            var html_bfd12debf6f7cca77a5bd223b5ef903d = $(`<div id="html_bfd12debf6f7cca77a5bd223b5ef903d" style="width: 100.0%; height: 100.0%;">     <b>Puerto Vallarta</b><br>     <b>Total Score:</b> 79.1%<br>     <b>LGBTQ+ Safety:</b> 26.1%<br>     <b>Cost of Living:</b> 15.0%<br>     <b>Ease of Relocation:</b> 16.5%<br>     <b>Climate Resilience & Comfort:</b> 9.5%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 3.0%<br><br>     <a href='https://docs.google.com/document/d/1W-Sb1jO82n8a8QopxXx-brCMO0M86Ohr2vewXg8h3gA/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_2a62dc0451bd9c8cb6d44505affc4602.setContent(html_bfd12debf6f7cca77a5bd223b5ef903d);
+        
+
+        marker_0f4847682d6ebd5e9846286273a5a7b3.bindPopup(popup_2a62dc0451bd9c8cb6d44505affc4602)
+        ;
+
+        
+    
+    
+            var marker_c1a0230b2f5e39b7372db91915562b97 = L.marker(
+                [21.0186, -101.2591],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_bb5a80d9c68e7c6582761692db993559 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e3\u003c/div\u003e\n    "});
+            marker_c1a0230b2f5e39b7372db91915562b97.setIcon(div_icon_bb5a80d9c68e7c6582761692db993559);
+        
+    
+        var popup_420a592c09c19579f6aaeed309cb672b = L.popup({"maxWidth": 300});
+
+        
+            var html_4a94a9c25cd92d65d6ad64d911d16107 = $(`<div id="html_4a94a9c25cd92d65d6ad64d911d16107" style="width: 100.0%; height: 100.0%;">     <b>Guanajuato City</b><br>     <b>Total Score:</b> 79.1%<br>     <b>LGBTQ+ Safety:</b> 22.2%<br>     <b>Cost of Living:</b> 16.6%<br>     <b>Ease of Relocation:</b> 16.5%<br>     <b>Climate Resilience & Comfort:</b> 11.5%<br>     <b>Culture & Community:</b> 9.5%<br>     <b>Job Opportunities:</b> 2.8%<br><br>     <a href='https://docs.google.com/document/d/12X3E-K-fEbHX87RryTnTsme9wb7j1fRvFeON21WBYXc/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_420a592c09c19579f6aaeed309cb672b.setContent(html_4a94a9c25cd92d65d6ad64d911d16107);
+        
+
+        marker_c1a0230b2f5e39b7372db91915562b97.bindPopup(popup_420a592c09c19579f6aaeed309cb672b)
+        ;
+
+        
+    
+    
+            var marker_37915dbf64d7ee3ca197ed2317c33d72 = L.marker(
+                [-34.6037, -58.3816],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_a14ee868223149c06ae0b29a84870a58 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e4\u003c/div\u003e\n    "});
+            marker_37915dbf64d7ee3ca197ed2317c33d72.setIcon(div_icon_a14ee868223149c06ae0b29a84870a58);
+        
+    
+        var popup_8885fc237ab881fc6f753d74fd7f211c = L.popup({"maxWidth": 300});
+
+        
+            var html_5d0c86059948c23763a47b27fdb2b8f5 = $(`<div id="html_5d0c86059948c23763a47b27fdb2b8f5" style="width: 100.0%; height: 100.0%;">     <b>Buenos Aires</b><br>     <b>Total Score:</b> 79.1%<br>     <b>LGBTQ+ Safety:</b> 26.8%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 15.5%<br>     <b>Climate Resilience & Comfort:</b> 8.2%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 3.6%<br><br>     <a href='https://docs.google.com/document/d/1koBSXvhvXhIw8PRjozlFiT9xMZFSOOiaZbW0_4yHoS0/edit?tab=t.7mewyk2y3aaz' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_8885fc237ab881fc6f753d74fd7f211c.setContent(html_5d0c86059948c23763a47b27fdb2b8f5);
+        
+
+        marker_37915dbf64d7ee3ca197ed2317c33d72.bindPopup(popup_8885fc237ab881fc6f753d74fd7f211c)
+        ;
+
+        
+    
+    
+            var marker_c04ea9a14b87bb74428dae5d92a5eb1d = L.marker(
+                [17.0732, -96.7266],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_22773ebcfbe528d3a4399909f533a7c6 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e5\u003c/div\u003e\n    "});
+            marker_c04ea9a14b87bb74428dae5d92a5eb1d.setIcon(div_icon_22773ebcfbe528d3a4399909f533a7c6);
+        
+    
+        var popup_437fa4bef199c84d7b263349c2e14b3f = L.popup({"maxWidth": 300});
+
+        
+            var html_d7a888509fa5608de106bb2d2ebde85d = $(`<div id="html_d7a888509fa5608de106bb2d2ebde85d" style="width: 100.0%; height: 100.0%;">     <b>Oaxaca City</b><br>     <b>Total Score:</b> 79.0%<br>     <b>LGBTQ+ Safety:</b> 22.8%<br>     <b>Cost of Living:</b> 16.4%<br>     <b>Ease of Relocation:</b> 16.5%<br>     <b>Climate Resilience & Comfort:</b> 11.5%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 2.8%<br><br>     <a href='https://docs.google.com/document/d/17FRZzwWvGY-TfnMRpwPhiTUz6Jp4NA05I4d6BRb1ll0/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_437fa4bef199c84d7b263349c2e14b3f.setContent(html_d7a888509fa5608de106bb2d2ebde85d);
+        
+
+        marker_c04ea9a14b87bb74428dae5d92a5eb1d.bindPopup(popup_437fa4bef199c84d7b263349c2e14b3f)
+        ;
+
+        
+    
+    
+            var marker_9a4bff3a3b7e4f6fccd302921292b5d9 = L.marker(
+                [20.9144, -100.7439],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_4336e2d02492d8edbed08a1b6b769ad6 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e6\u003c/div\u003e\n    "});
+            marker_9a4bff3a3b7e4f6fccd302921292b5d9.setIcon(div_icon_4336e2d02492d8edbed08a1b6b769ad6);
+        
+    
+        var popup_3a4f33bbde0181acba85689a54dc0876 = L.popup({"maxWidth": 300});
+
+        
+            var html_ba72586493f0c231123f61c0cf266b00 = $(`<div id="html_ba72586493f0c231123f61c0cf266b00" style="width: 100.0%; height: 100.0%;">     <b>San Miguel de Allende</b><br>     <b>Total Score:</b> 79.0%<br>     <b>LGBTQ+ Safety:</b> 23.7%<br>     <b>Cost of Living:</b> 14.5%<br>     <b>Ease of Relocation:</b> 16.5%<br>     <b>Climate Resilience & Comfort:</b> 12.0%<br>     <b>Culture & Community:</b> 9.5%<br>     <b>Job Opportunities:</b> 2.8%<br><br>     <a href='https://docs.google.com/document/d/14lnfiOOhzS9jT7O8Ro7BuRVA5angH6BkxzYCB9GY8ck/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_3a4f33bbde0181acba85689a54dc0876.setContent(html_ba72586493f0c231123f61c0cf266b00);
+        
+
+        marker_9a4bff3a3b7e4f6fccd302921292b5d9.bindPopup(popup_3a4f33bbde0181acba85689a54dc0876)
+        ;
+
+        
+    
+    
+            var marker_81c923f82f564c47c22d20463fd3fdd2 = L.marker(
+                [38.6979, -9.4215],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_bf81ce9c7efaf3a8b349b031d0bca2e4 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e7\u003c/div\u003e\n    "});
+            marker_81c923f82f564c47c22d20463fd3fdd2.setIcon(div_icon_bf81ce9c7efaf3a8b349b031d0bca2e4);
+        
+    
+        var popup_741f2f4a28683e35e6f20e44e1bad53d = L.popup({"maxWidth": 300});
+
+        
+            var html_af46b6d4dc8da8c26dc28d85313cca70 = $(`<div id="html_af46b6d4dc8da8c26dc28d85313cca70" style="width: 100.0%; height: 100.0%;">     <b>Cascais</b><br>     <b>Total Score:</b> 78.5%<br>     <b>LGBTQ+ Safety:</b> 24.0%<br>     <b>Cost of Living:</b> 14.0%<br>     <b>Ease of Relocation:</b> 17.0%<br>     <b>Climate Resilience & Comfort:</b> 12.0%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 3.0%<br><br>     <a href='https://docs.google.com/document/d/1G9PDolC4VtochFLtBSdKwhlR99LW3H053eZvqvaKqwY/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_741f2f4a28683e35e6f20e44e1bad53d.setContent(html_af46b6d4dc8da8c26dc28d85313cca70);
+        
+
+        marker_81c923f82f564c47c22d20463fd3fdd2.bindPopup(popup_741f2f4a28683e35e6f20e44e1bad53d)
+        ;
+
+        
+    
+    
+            var marker_cfbe41ee653302408b482dcdbdbe8b84 = L.marker(
+                [-38.0055, -57.5426],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_8f3b6c12031e9e2b5f24be9d48d15c2c = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e8\u003c/div\u003e\n    "});
+            marker_cfbe41ee653302408b482dcdbdbe8b84.setIcon(div_icon_8f3b6c12031e9e2b5f24be9d48d15c2c);
+        
+    
+        var popup_09c4342c0027ee198de8324f11d7a804 = L.popup({"maxWidth": 300});
+
+        
+            var html_21fa282c1636cfcdafaf3c2064abea2e = $(`<div id="html_21fa282c1636cfcdafaf3c2064abea2e" style="width: 100.0%; height: 100.0%;">     <b>Mar del Plata</b><br>     <b>Total Score:</b> 78.5%<br>     <b>LGBTQ+ Safety:</b> 24.6%<br>     <b>Cost of Living:</b> 17.8%<br>     <b>Ease of Relocation:</b> 14.8%<br>     <b>Climate Resilience & Comfort:</b> 9.2%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 3.6%<br><br>     <a href='https://docs.google.com/document/d/1MmitbsR3_3arXQNEWvHrhkbuBfogCINg7LcS63nmJU0/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_09c4342c0027ee198de8324f11d7a804.setContent(html_21fa282c1636cfcdafaf3c2064abea2e);
+        
+
+        marker_cfbe41ee653302408b482dcdbdbe8b84.bindPopup(popup_09c4342c0027ee198de8324f11d7a804)
+        ;
+
+        
+    
+    
+            var marker_ea9615a37c678d1ce15f1b9cdc0b535f = L.marker(
+                [-34.9205, -57.9536],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_bfbdac8a5afaa276c281842388ce5ba7 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e9\u003c/div\u003e\n    "});
+            marker_ea9615a37c678d1ce15f1b9cdc0b535f.setIcon(div_icon_bfbdac8a5afaa276c281842388ce5ba7);
+        
+    
+        var popup_6d722eeed4416ca5d9ebb782c93e8794 = L.popup({"maxWidth": 300});
+
+        
+            var html_9b525810848a40f4d6da0d4398990948 = $(`<div id="html_9b525810848a40f4d6da0d4398990948" style="width: 100.0%; height: 100.0%;">     <b>La Plata</b><br>     <b>Total Score:</b> 78.5%<br>     <b>LGBTQ+ Safety:</b> 25.5%<br>     <b>Cost of Living:</b> 17.4%<br>     <b>Ease of Relocation:</b> 14.5%<br>     <b>Climate Resilience & Comfort:</b> 8.7%<br>     <b>Culture & Community:</b> 8.8%<br>     <b>Job Opportunities:</b> 3.6%<br><br>     <a href='https://docs.google.com/document/d/16x_7XYuY7X7tOYEZt7RMsx4f4acp13J8W1AGbvomsMY/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_6d722eeed4416ca5d9ebb782c93e8794.setContent(html_9b525810848a40f4d6da0d4398990948);
+        
+
+        marker_ea9615a37c678d1ce15f1b9cdc0b535f.bindPopup(popup_6d722eeed4416ca5d9ebb782c93e8794)
+        ;
+
+        
+    
+    
+            var marker_51512090d330a1f896c0ade5401b44eb = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_26bc219c34fb778bff1a8a6d14bb6ddc = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e10\u003c/div\u003e\n    "});
+            marker_51512090d330a1f896c0ade5401b44eb.setIcon(div_icon_26bc219c34fb778bff1a8a6d14bb6ddc);
+        
+    
+        var popup_592e84ba73c5a3f631017eadf5a398c4 = L.popup({"maxWidth": 300});
+
+        
+            var html_36010d3505f612bbc3c0f4aaf7fb6f4e = $(`<div id="html_36010d3505f612bbc3c0f4aaf7fb6f4e" style="width: 100.0%; height: 100.0%;">     <b>Guadalajara</b><br>     <b>Total Score:</b> 78.4%<br>     <b>LGBTQ+ Safety:</b> 23.4%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 16.0%<br>     <b>Climate Resilience & Comfort:</b> 11.0%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1Au0v8yatzLexBLzdKWp-dcl9VoEKO41yKrBOmP81Pz4/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_592e84ba73c5a3f631017eadf5a398c4.setContent(html_36010d3505f612bbc3c0f4aaf7fb6f4e);
+        
+
+        marker_51512090d330a1f896c0ade5401b44eb.bindPopup(popup_592e84ba73c5a3f631017eadf5a398c4)
+        ;
+
+        
+    
+    
+            var marker_68e9cfc3b0c920495da259ca8fc3dbaf = L.marker(
+                [32.5149, -117.0382],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_d392f92504c1b72525a34fc79b2360ef = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e11\u003c/div\u003e\n    "});
+            marker_68e9cfc3b0c920495da259ca8fc3dbaf.setIcon(div_icon_d392f92504c1b72525a34fc79b2360ef);
+        
+    
+        var popup_26629fef05850943cca7a8a0fd4561cd = L.popup({"maxWidth": 300});
+
+        
+            var html_6c6e767c6d0a59153572eb9fc3734cfc = $(`<div id="html_6c6e767c6d0a59153572eb9fc3734cfc" style="width: 100.0%; height: 100.0%;">     <b>Tijuana</b><br>     <b>Total Score:</b> 78.1%<br>     <b>LGBTQ+ Safety:</b> 22.5%<br>     <b>Cost of Living:</b> 14.8%<br>     <b>Ease of Relocation:</b> 18.0%<br>     <b>Climate Resilience & Comfort:</b> 10.8%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 4.0%<br><br>     <a href='https://docs.google.com/document/d/10QyiQjDoppAb5scQEJgpgvHD4D9h2QiHeGO7nRwkS2c/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_26629fef05850943cca7a8a0fd4561cd.setContent(html_6c6e767c6d0a59153572eb9fc3734cfc);
+        
+
+        marker_68e9cfc3b0c920495da259ca8fc3dbaf.bindPopup(popup_26629fef05850943cca7a8a0fd4561cd)
+        ;
+
+        
+    
+    
+            var marker_baeb2613bd674f49a9f34352b68e7a2d = L.marker(
+                [20.5888, -100.3899],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_f8e4134e269c0ee930b7a6bb1718bcb8 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e12\u003c/div\u003e\n    "});
+            marker_baeb2613bd674f49a9f34352b68e7a2d.setIcon(div_icon_f8e4134e269c0ee930b7a6bb1718bcb8);
+        
+    
+        var popup_45a2bb151f51fc6cc59787939cf127da = L.popup({"maxWidth": 300});
+
+        
+            var html_8c3860433b411f136bd491019a555628 = $(`<div id="html_8c3860433b411f136bd491019a555628" style="width: 100.0%; height: 100.0%;">     <b>Querétaro</b><br>     <b>Total Score:</b> 78.0%<br>     <b>LGBTQ+ Safety:</b> 21.9%<br>     <b>Cost of Living:</b> 15.8%<br>     <b>Ease of Relocation:</b> 16.5%<br>     <b>Climate Resilience & Comfort:</b> 11.8%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/104UlAxHIXwDYhd816qsuf3haCgO07PHrIbnNgMvf-1Q/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_45a2bb151f51fc6cc59787939cf127da.setContent(html_8c3860433b411f136bd491019a555628);
+        
+
+        marker_baeb2613bd674f49a9f34352b68e7a2d.bindPopup(popup_45a2bb151f51fc6cc59787939cf127da)
+        ;
+
+        
+    
+    
+            var marker_528b011db56976b1722d44add8e2b2ab = L.marker(
+                [21.8853, -102.2916],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_3ad4d65a8c30b70038fa570f0fbf6cb7 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e13\u003c/div\u003e\n    "});
+            marker_528b011db56976b1722d44add8e2b2ab.setIcon(div_icon_3ad4d65a8c30b70038fa570f0fbf6cb7);
+        
+    
+        var popup_187d3490fb0b5e7dc671e36f10ea978d = L.popup({"maxWidth": 300});
+
+        
+            var html_8a66132dfc258f1465dfd8b58f1259ec = $(`<div id="html_8a66132dfc258f1465dfd8b58f1259ec" style="width: 100.0%; height: 100.0%;">     <b>Aguascalientes</b><br>     <b>Total Score:</b> 77.7%<br>     <b>LGBTQ+ Safety:</b> 20.4%<br>     <b>Cost of Living:</b> 17.4%<br>     <b>Ease of Relocation:</b> 16.5%<br>     <b>Climate Resilience & Comfort:</b> 11.8%<br>     <b>Culture & Community:</b> 7.8%<br>     <b>Job Opportunities:</b> 3.8%<br><br>     <a href='https://docs.google.com/document/d/1wmXctC8jVcD_2mMy6YOLoJwGi4tp-enAjtVcN3HO6WQ/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_187d3490fb0b5e7dc671e36f10ea978d.setContent(html_8a66132dfc258f1465dfd8b58f1259ec);
+        
+
+        marker_528b011db56976b1722d44add8e2b2ab.bindPopup(popup_187d3490fb0b5e7dc671e36f10ea978d)
+        ;
+
+        
+    
+    
+            var marker_d59682987ed64477f4f98ece3655c35b = L.marker(
+                [19.4326, -99.1332],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_101c8fcc45e44e647d0046efc204fa62 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e14\u003c/div\u003e\n    "});
+            marker_d59682987ed64477f4f98ece3655c35b.setIcon(div_icon_101c8fcc45e44e647d0046efc204fa62);
+        
+    
+        var popup_3a6e981fbe0f8b312b1ced90db6b6831 = L.popup({"maxWidth": 300});
+
+        
+            var html_a30abe56109fcb26bd5bfe959c33d449 = $(`<div id="html_a30abe56109fcb26bd5bfe959c33d449" style="width: 100.0%; height: 100.0%;">     <b>Mexico City</b><br>     <b>Total Score:</b> 77.3%<br>     <b>LGBTQ+ Safety:</b> 24.3%<br>     <b>Cost of Living:</b> 14.5%<br>     <b>Ease of Relocation:</b> 16.0%<br>     <b>Climate Resilience & Comfort:</b> 10.0%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1JH2pcHVKKD3vDdhuEuyInT1Xm_7pPrDVx8Mo_4d92ZM/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_3a6e981fbe0f8b312b1ced90db6b6831.setContent(html_a30abe56109fcb26bd5bfe959c33d449);
+        
+
+        marker_d59682987ed64477f4f98ece3655c35b.bindPopup(popup_3a6e981fbe0f8b312b1ced90db6b6831)
+        ;
+
+        
+    
+    
+            var marker_bfc5be2e8709d1a86e8db45decba1215 = L.marker(
+                [-32.9468, -60.6393],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_8af19f5c20eb1ffaa19ae6ceefb588d9 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e15\u003c/div\u003e\n    "});
+            marker_bfc5be2e8709d1a86e8db45decba1215.setIcon(div_icon_8af19f5c20eb1ffaa19ae6ceefb588d9);
+        
+    
+        var popup_7550b4918c33d1d21b306c1fa5e9ff1a = L.popup({"maxWidth": 300});
+
+        
+            var html_b48148694e0b564a3f5ae5b3746f1c8c = $(`<div id="html_b48148694e0b564a3f5ae5b3746f1c8c" style="width: 100.0%; height: 100.0%;">     <b>Rosario</b><br>     <b>Total Score:</b> 77.3%<br>     <b>LGBTQ+ Safety:</b> 25.1%<br>     <b>Cost of Living:</b> 17.2%<br>     <b>Ease of Relocation:</b> 14.3%<br>     <b>Climate Resilience & Comfort:</b> 8.4%<br>     <b>Culture & Community:</b> 8.8%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1f3_D9asDITYZCzpzEiCYTNGt31NlZoEUedmDRLCexc4/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_7550b4918c33d1d21b306c1fa5e9ff1a.setContent(html_b48148694e0b564a3f5ae5b3746f1c8c);
+        
+
+        marker_bfc5be2e8709d1a86e8db45decba1215.bindPopup(popup_7550b4918c33d1d21b306c1fa5e9ff1a)
+        ;
+
+        
+    
+    
+            var marker_846c783b269d0f265ae62aebc2a7ae70 = L.marker(
+                [19.2826, -99.6557],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_962cfb58dfbab9de2880336808484072 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e16\u003c/div\u003e\n    "});
+            marker_846c783b269d0f265ae62aebc2a7ae70.setIcon(div_icon_962cfb58dfbab9de2880336808484072);
+        
+    
+        var popup_fab38f10244e92a8e2faac63ac2705cc = L.popup({"maxWidth": 300});
+
+        
+            var html_dfe9bbec4437b03fdd788ed418e7fdfa = $(`<div id="html_dfe9bbec4437b03fdd788ed418e7fdfa" style="width: 100.0%; height: 100.0%;">     <b>Toluca</b><br>     <b>Total Score:</b> 77.0%<br>     <b>LGBTQ+ Safety:</b> 20.4%<br>     <b>Cost of Living:</b> 17.2%<br>     <b>Ease of Relocation:</b> 17.0%<br>     <b>Climate Resilience & Comfort:</b> 11.7%<br>     <b>Culture & Community:</b> 7.0%<br>     <b>Job Opportunities:</b> 3.7%<br><br>     <a href='https://docs.google.com/document/d/1VwqW4u2eMj1GAug0tAq0VbYtGiu6NyUss9V74Uw2PsM/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_fab38f10244e92a8e2faac63ac2705cc.setContent(html_dfe9bbec4437b03fdd788ed418e7fdfa);
+        
+
+        marker_846c783b269d0f265ae62aebc2a7ae70.bindPopup(popup_fab38f10244e92a8e2faac63ac2705cc)
+        ;
+
+        
+    
+    
+            var marker_f9ee3cf8d1b790bd08ed3b5b0b1dbf41 = L.marker(
+                [41.1496, -8.611],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_2c6028f294d50d62abc91bfc8f730bbf = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e17\u003c/div\u003e\n    "});
+            marker_f9ee3cf8d1b790bd08ed3b5b0b1dbf41.setIcon(div_icon_2c6028f294d50d62abc91bfc8f730bbf);
+        
+    
+        var popup_b8d6f375c413c2f57dd85a7dd28b4ab4 = L.popup({"maxWidth": 300});
+
+        
+            var html_31fcdf1bda93784f21b5ba05f196b467 = $(`<div id="html_31fcdf1bda93784f21b5ba05f196b467" style="width: 100.0%; height: 100.0%;">     <b>Porto</b><br>     <b>Total Score:</b> 77.0%<br>     <b>LGBTQ+ Safety:</b> 24.0%<br>     <b>Cost of Living:</b> 15.0%<br>     <b>Ease of Relocation:</b> 16.0%<br>     <b>Climate Resilience & Comfort:</b> 11.0%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 3.0%<br><br>     <a href='https://docs.google.com/document/d/1cr2NMOrAtNg1C0DgPCW9ybVXfS4I34zYV4inO6nSwik/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_b8d6f375c413c2f57dd85a7dd28b4ab4.setContent(html_31fcdf1bda93784f21b5ba05f196b467);
+        
+
+        marker_f9ee3cf8d1b790bd08ed3b5b0b1dbf41.bindPopup(popup_b8d6f375c413c2f57dd85a7dd28b4ab4)
+        ;
+
+        
+    
+    
+            var marker_ec32bd3e934b6fe65ebfb2aee46dc1a7 = L.marker(
+                [31.8667, -116.5997],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_be74394c82f421b786832c2d428b8911 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e18\u003c/div\u003e\n    "});
+            marker_ec32bd3e934b6fe65ebfb2aee46dc1a7.setIcon(div_icon_be74394c82f421b786832c2d428b8911);
+        
+    
+        var popup_4b0c78bd17b65f702d14434144d6b9bf = L.popup({"maxWidth": 300});
+
+        
+            var html_84a203571372c5cec343082d8093e241 = $(`<div id="html_84a203571372c5cec343082d8093e241" style="width: 100.0%; height: 100.0%;">     <b>Ensenada</b><br>     <b>Total Score:</b> 77.0%<br>     <b>LGBTQ+ Safety:</b> 21.0%<br>     <b>Cost of Living:</b> 15.4%<br>     <b>Ease of Relocation:</b> 17.5%<br>     <b>Climate Resilience & Comfort:</b> 12.3%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.3%<br><br>     <a href='https://docs.google.com/document/d/1rLZNQrkksG44DWBg5N_QjW7dX5kveyWOcS_rZ4p8Ago/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_4b0c78bd17b65f702d14434144d6b9bf.setContent(html_84a203571372c5cec343082d8093e241);
+        
+
+        marker_ec32bd3e934b6fe65ebfb2aee46dc1a7.bindPopup(popup_4b0c78bd17b65f702d14434144d6b9bf)
+        ;
+
+        
+    
+    
+            var marker_c94f025e5e9f9ff0b155952e14703236 = L.marker(
+                [19.0414, -98.2063],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_e2e6c9ece6cac7e4789781b1a11f7e38 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e19\u003c/div\u003e\n    "});
+            marker_c94f025e5e9f9ff0b155952e14703236.setIcon(div_icon_e2e6c9ece6cac7e4789781b1a11f7e38);
+        
+    
+        var popup_743a129b56f108bb6bcc9cc69cd55509 = L.popup({"maxWidth": 300});
+
+        
+            var html_666c2fc09a74f4b4309921d5cae6ba94 = $(`<div id="html_666c2fc09a74f4b4309921d5cae6ba94" style="width: 100.0%; height: 100.0%;">     <b>Puebla</b><br>     <b>Total Score:</b> 76.9%<br>     <b>LGBTQ+ Safety:</b> 21.3%<br>     <b>Cost of Living:</b> 16.5%<br>     <b>Ease of Relocation:</b> 16.0%<br>     <b>Climate Resilience & Comfort:</b> 11.3%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 3.3%<br><br>     <a href='https://docs.google.com/document/d/1imVF0YEPI5bPHmnMdy0Gf2A4JWDbVq4pJgC0LNdCfuA/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_743a129b56f108bb6bcc9cc69cd55509.setContent(html_666c2fc09a74f4b4309921d5cae6ba94);
+        
+
+        marker_c94f025e5e9f9ff0b155952e14703236.bindPopup(popup_743a129b56f108bb6bcc9cc69cd55509)
+        ;
+
+        
+    
+    
+            var marker_804ca570be2b9e76803d1c9c83e72551 = L.marker(
+                [24.1426, -110.3128],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_1f1034e28f293098002bf7895ce57781 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e20\u003c/div\u003e\n    "});
+            marker_804ca570be2b9e76803d1c9c83e72551.setIcon(div_icon_1f1034e28f293098002bf7895ce57781);
+        
+    
+        var popup_276b4b23075c1eb01f6ac87fa90e180b = L.popup({"maxWidth": 300});
+
+        
+            var html_58de6057a5f52d2c2a10b73a17f24776 = $(`<div id="html_58de6057a5f52d2c2a10b73a17f24776" style="width: 100.0%; height: 100.0%;">     <b>La Paz</b><br>     <b>Total Score:</b> 76.8%<br>     <b>LGBTQ+ Safety:</b> 20.7%<br>     <b>Cost of Living:</b> 15.6%<br>     <b>Ease of Relocation:</b> 17.5%<br>     <b>Climate Resilience & Comfort:</b> 12.0%<br>     <b>Culture & Community:</b> 7.8%<br>     <b>Job Opportunities:</b> 3.2%<br><br>     <a href='https://docs.google.com/document/d/1yFZ3xGV805vSNSkb1nI3KMUPYP3sqnfx0NusUTZG4Ek/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_276b4b23075c1eb01f6ac87fa90e180b.setContent(html_58de6057a5f52d2c2a10b73a17f24776);
+        
+
+        marker_804ca570be2b9e76803d1c9c83e72551.bindPopup(popup_276b4b23075c1eb01f6ac87fa90e180b)
+        ;
+
+        
+    
+    
+            var marker_80673d1598c7eb62637d4cd1d55ab9cb = L.marker(
+                [-31.4201, -64.1888],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_5d15f87129e312b53da48334bbd7e5b2 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e21\u003c/div\u003e\n    "});
+            marker_80673d1598c7eb62637d4cd1d55ab9cb.setIcon(div_icon_5d15f87129e312b53da48334bbd7e5b2);
+        
+    
+        var popup_781f5e717187b7f7f8d268170e6b7c48 = L.popup({"maxWidth": 300});
+
+        
+            var html_cf1547047783aeb2badf48dcf14f3cd3 = $(`<div id="html_cf1547047783aeb2badf48dcf14f3cd3" style="width: 100.0%; height: 100.0%;">     <b>Córdoba</b><br>     <b>Total Score:</b> 76.8%<br>     <b>LGBTQ+ Safety:</b> 24.3%<br>     <b>Cost of Living:</b> 16.8%<br>     <b>Ease of Relocation:</b> 14.7%<br>     <b>Climate Resilience & Comfort:</b> 9.0%<br>     <b>Culture & Community:</b> 8.6%<br>     <b>Job Opportunities:</b> 3.4%<br><br>     <a href='https://docs.google.com/document/d/1EI6QjRZ58whEFr_Ckce04BlWPLm9HcyldXxr2TaG4VE/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_781f5e717187b7f7f8d268170e6b7c48.setContent(html_cf1547047783aeb2badf48dcf14f3cd3);
+        
+
+        marker_80673d1598c7eb62637d4cd1d55ab9cb.bindPopup(popup_781f5e717187b7f7f8d268170e6b7c48)
+        ;
+
+        
+    
+    
+            var marker_0ec8a48a85a205aa744db4de1f3696b3 = L.marker(
+                [-34.95, -54.95],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_5c5bd2a4604a7f2ca58d1573c856a257 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e22\u003c/div\u003e\n    "});
+            marker_0ec8a48a85a205aa744db4de1f3696b3.setIcon(div_icon_5c5bd2a4604a7f2ca58d1573c856a257);
+        
+    
+        var popup_33a53bc6e539fcc337b2f4e2b36e4afa = L.popup({"maxWidth": 300});
+
+        
+            var html_6a4fff678e25fbf57f022e6fb1759504 = $(`<div id="html_6a4fff678e25fbf57f022e6fb1759504" style="width: 100.0%; height: 100.0%;">     <b>Punta del Este</b><br>     <b>Total Score:</b> 76.7%<br>     <b>LGBTQ+ Safety:</b> 26.4%<br>     <b>Cost of Living:</b> 11.8%<br>     <b>Ease of Relocation:</b> 15.3%<br>     <b>Climate Resilience & Comfort:</b> 11.5%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 3.2%<br><br>     <a href='https://docs.google.com/document/d/14_7eyUmNHJXyYHJT4NjcC2mpLL1FiK1PT9K4VqftM54/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_33a53bc6e539fcc337b2f4e2b36e4afa.setContent(html_6a4fff678e25fbf57f022e6fb1759504);
+        
+
+        marker_0ec8a48a85a205aa744db4de1f3696b3.bindPopup(popup_33a53bc6e539fcc337b2f4e2b36e4afa)
+        ;
+
+        
+    
+    
+            var marker_46923f6b532609e91721edd9683c74a1 = L.marker(
+                [18.9844, -99.099],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_a7596fa2200ad2c807b87b2d5ea77d41 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e23\u003c/div\u003e\n    "});
+            marker_46923f6b532609e91721edd9683c74a1.setIcon(div_icon_a7596fa2200ad2c807b87b2d5ea77d41);
+        
+    
+        var popup_3d90f55d78f47bef4ada01382a07c4af = L.popup({"maxWidth": 300});
+
+        
+            var html_8ad717b353f1827621a0fd4ba7355a6e = $(`<div id="html_8ad717b353f1827621a0fd4ba7355a6e" style="width: 100.0%; height: 100.0%;">     <b>Tepoztlán </b><br>     <b>Total Score:</b> 76.7%<br>     <b>LGBTQ+ Safety:</b> 21.0%<br>     <b>Cost of Living:</b> 15.2%<br>     <b>Ease of Relocation:</b> 17.0%<br>     <b>Climate Resilience & Comfort:</b> 12.2%<br>     <b>Culture & Community:</b> 8.8%<br>     <b>Job Opportunities:</b> 2.5%<br><br>     <a href='https://docs.google.com/document/d/1EdLT-s8uuPbndQZZoxnWrvHjZIWhJwkRHNWRl4aTLoU/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_3d90f55d78f47bef4ada01382a07c4af.setContent(html_8ad717b353f1827621a0fd4ba7355a6e);
+        
+
+        marker_46923f6b532609e91721edd9683c74a1.bindPopup(popup_3d90f55d78f47bef4ada01382a07c4af)
+        ;
+
+        
+    
+    
+            var marker_1c896692eeb645240575987579f81c98 = L.marker(
+                [50.935173, 6.953101],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_6c46ab46adbd748f14aa39b2288409ba = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e24\u003c/div\u003e\n    "});
+            marker_1c896692eeb645240575987579f81c98.setIcon(div_icon_6c46ab46adbd748f14aa39b2288409ba);
+        
+    
+        var popup_d7369545eea67ff2d45be854dec375ad = L.popup({"maxWidth": 300});
+
+        
+            var html_cd7507c95640aaad18a01e9deef2ca25 = $(`<div id="html_cd7507c95640aaad18a01e9deef2ca25" style="width: 100.0%; height: 100.0%;">     <b>Cologne (Köln)</b><br>     <b>Total Score:</b> 76.5%<br>     <b>LGBTQ+ Safety:</b> 28.0%<br>     <b>Cost of Living:</b> 14.0%<br>     <b>Ease of Relocation:</b> 11.0%<br>     <b>Climate Resilience & Comfort:</b> 10.5%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 4.0%<br><br>     <a href='https://docs.google.com/document/d/1koBSXvhvXhIw8PRjozlFiT9xMZFSOOiaZbW0_4yHoS0/edit?tab=t.7mewyk2y3aaz' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_d7369545eea67ff2d45be854dec375ad.setContent(html_cd7507c95640aaad18a01e9deef2ca25);
+        
+
+        marker_1c896692eeb645240575987579f81c98.bindPopup(popup_d7369545eea67ff2d45be854dec375ad)
+        ;
+
+        
+    
+    
+            var marker_c8bc3455b50f56edbb690eca039ab00f = L.marker(
+                [32.6669, -16.9241],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_6b25524ad6f7b66947b4cafbefbc345d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e25\u003c/div\u003e\n    "});
+            marker_c8bc3455b50f56edbb690eca039ab00f.setIcon(div_icon_6b25524ad6f7b66947b4cafbefbc345d);
+        
+    
+        var popup_6ec33fcc8e2dc30f1ed758e03a608d13 = L.popup({"maxWidth": 300});
+
+        
+            var html_e7048a0377ab879f83b0fbe07c6164f7 = $(`<div id="html_e7048a0377ab879f83b0fbe07c6164f7" style="width: 100.0%; height: 100.0%;">     <b>Madeira</b><br>     <b>Total Score:</b> 76.5%<br>     <b>LGBTQ+ Safety:</b> 22.5%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 14.0%<br>     <b>Climate Resilience & Comfort:</b> 13.5%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.0%<br><br>     <a href='https://docs.google.com/document/d/1ZVsMc_ObF3JPbaxT5Gbx0sNPqCoRz_OYGVFKx6RVx1w/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_6ec33fcc8e2dc30f1ed758e03a608d13.setContent(html_e7048a0377ab879f83b0fbe07c6164f7);
+        
+
+        marker_c8bc3455b50f56edbb690eca039ab00f.bindPopup(popup_6ec33fcc8e2dc30f1ed758e03a608d13)
+        ;
+
+        
+    
+    
+            var marker_6742a904c730a753f348f3c0386e2adb = L.marker(
+                [-31.9796, -64.555],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_acfa61f096462e24245bd30c8ab3786b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e26\u003c/div\u003e\n    "});
+            marker_6742a904c730a753f348f3c0386e2adb.setIcon(div_icon_acfa61f096462e24245bd30c8ab3786b);
+        
+    
+        var popup_0434d6ac6ed8394400e015cb7ccc1345 = L.popup({"maxWidth": 300});
+
+        
+            var html_f6448609a8b4736c8099c4fba99faaf5 = $(`<div id="html_f6448609a8b4736c8099c4fba99faaf5" style="width: 100.0%; height: 100.0%;">     <b>Villa General Belgrano</b><br>     <b>Total Score:</b> 76.3%<br>     <b>LGBTQ+ Safety:</b> 21.5%<br>     <b>Cost of Living:</b> 17.6%<br>     <b>Ease of Relocation:</b> 14.0%<br>     <b>Climate Resilience & Comfort:</b> 11.2%<br>     <b>Culture & Community:</b> 8.4%<br>     <b>Job Opportunities:</b> 3.6%<br><br>     <a href='https://docs.google.com/document/d/1cyDA_4adrez6-Cc5_ZUsHwEjdQpuijgflhfLD7YBXqQ/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_0434d6ac6ed8394400e015cb7ccc1345.setContent(html_f6448609a8b4736c8099c4fba99faaf5);
+        
+
+        marker_6742a904c730a753f348f3c0386e2adb.bindPopup(popup_0434d6ac6ed8394400e015cb7ccc1345)
+        ;
+
+        
+    
+    
+            var marker_2f8fe24634a6c57a7e72be0fcb6fbda2 = L.marker(
+                [20.9674, -89.5926],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_39fd09021cecf6e27a1c0ff865cc3848 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e27\u003c/div\u003e\n    "});
+            marker_2f8fe24634a6c57a7e72be0fcb6fbda2.setIcon(div_icon_39fd09021cecf6e27a1c0ff865cc3848);
+        
+    
+        var popup_a3a4c41554411cef3656ffad6d59889c = L.popup({"maxWidth": 300});
+
+        
+            var html_0dd52992163b40c02139dd4e06993e1e = $(`<div id="html_0dd52992163b40c02139dd4e06993e1e" style="width: 100.0%; height: 100.0%;">     <b>Mérida</b><br>     <b>Total Score:</b> 76.2%<br>     <b>LGBTQ+ Safety:</b> 21.6%<br>     <b>Cost of Living:</b> 16.8%<br>     <b>Ease of Relocation:</b> 16.5%<br>     <b>Climate Resilience & Comfort:</b> 9.5%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 3.3%<br><br>     <a href='https://docs.google.com/document/d/1mIV4sXCJN8tA-QVOryVtIdfKC-kOyilEKYF-Ib_l_BM/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_a3a4c41554411cef3656ffad6d59889c.setContent(html_0dd52992163b40c02139dd4e06993e1e);
+        
+
+        marker_2f8fe24634a6c57a7e72be0fcb6fbda2.bindPopup(popup_a3a4c41554411cef3656ffad6d59889c)
+        ;
+
+        
+    
+    
+            var marker_d454da14c02e5698db122848f0b07488 = L.marker(
+                [37.7428, -25.6806],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_6343c120d8141ced3115751b2b0390a8 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #0074D9; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e28\u003c/div\u003e\n    "});
+            marker_d454da14c02e5698db122848f0b07488.setIcon(div_icon_6343c120d8141ced3115751b2b0390a8);
+        
+    
+        var popup_130b843319adc48745f38c485fc92f6f = L.popup({"maxWidth": 300});
+
+        
+            var html_6a716d72c4ad496d579b304218f004d4 = $(`<div id="html_6a716d72c4ad496d579b304218f004d4" style="width: 100.0%; height: 100.0%;">     <b>Ponta Delgada</b><br>     <b>Total Score:</b> 76.2%<br>     <b>LGBTQ+ Safety:</b> 20.7%<br>     <b>Cost of Living:</b> 17.5%<br>     <b>Ease of Relocation:</b> 14.0%<br>     <b>Climate Resilience & Comfort:</b> 13.0%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1BXVK1iO9FJNIWjKzM34E402wVJmS7Pu2TfBNbWxpXWg/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_130b843319adc48745f38c485fc92f6f.setContent(html_6a716d72c4ad496d579b304218f004d4);
+        
+
+        marker_d454da14c02e5698db122848f0b07488.bindPopup(popup_130b843319adc48745f38c485fc92f6f)
+        ;
+
+        
+    
+    
+            var marker_545a4f7c87f7ae4fe49cab628a463ea5 = L.marker(
+                [37.0167, -7.9333],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_1d48dc45d93ba92c14bf41cf8f575dc3 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e29\u003c/div\u003e\n    "});
+            marker_545a4f7c87f7ae4fe49cab628a463ea5.setIcon(div_icon_1d48dc45d93ba92c14bf41cf8f575dc3);
+        
+    
+        var popup_16eb1a72830a8b172b6177b5a5c01082 = L.popup({"maxWidth": 300});
+
+        
+            var html_8a7e124849d7408d0d75654600a1a8b6 = $(`<div id="html_8a7e124849d7408d0d75654600a1a8b6" style="width: 100.0%; height: 100.0%;">     <b>Faro (Algarve Region)</b><br>     <b>Total Score:</b> 76.0%<br>     <b>LGBTQ+ Safety:</b> 23.0%<br>     <b>Cost of Living:</b> 16.5%<br>     <b>Ease of Relocation:</b> 16.0%<br>     <b>Climate Resilience & Comfort:</b> 10.5%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 2.5%<br><br>     <a href='https://docs.google.com/document/d/1PKa1RdYY7zg3J9S7vv0J7IuYZbCeov9-2sKw7J7-O10/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_16eb1a72830a8b172b6177b5a5c01082.setContent(html_8a7e124849d7408d0d75654600a1a8b6);
+        
+
+        marker_545a4f7c87f7ae4fe49cab628a463ea5.bindPopup(popup_16eb1a72830a8b172b6177b5a5c01082)
+        ;
+
+        
+    
+    
+            var marker_37b13fbf6f6ae74d4f28460839e3be73 = L.marker(
+                [-37.3217, -59.1332],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_728af553193e35898f33bc9b7d797852 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e30\u003c/div\u003e\n    "});
+            marker_37b13fbf6f6ae74d4f28460839e3be73.setIcon(div_icon_728af553193e35898f33bc9b7d797852);
+        
+    
+        var popup_5efcb6703da28edc2217a0f4dade73c9 = L.popup({"maxWidth": 300});
+
+        
+            var html_92f4b51e39632f61c0ce1f903cb87245 = $(`<div id="html_92f4b51e39632f61c0ce1f903cb87245" style="width: 100.0%; height: 100.0%;">     <b>Tandil</b><br>     <b>Total Score:</b> 75.8%<br>     <b>LGBTQ+ Safety:</b> 20.7%<br>     <b>Cost of Living:</b> 18.3%<br>     <b>Ease of Relocation:</b> 14.4%<br>     <b>Climate Resilience & Comfort:</b> 11.3%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.6%<br><br>     <a href='https://docs.google.com/document/d/1jBfrREbFCVkAkOYZoQl3HsMSXg0omhBRqr3PhpyA8b0/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_5efcb6703da28edc2217a0f4dade73c9.setContent(html_92f4b51e39632f61c0ce1f903cb87245);
+        
+
+        marker_37b13fbf6f6ae74d4f28460839e3be73.bindPopup(popup_5efcb6703da28edc2217a0f4dade73c9)
+        ;
+
+        
+    
+    
+            var marker_b27a9790097858b701ef4cf5814cb4f4 = L.marker(
+                [-34.7542, -55.6758],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_3ff4271855267f9749946ac47ed60298 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e31\u003c/div\u003e\n    "});
+            marker_b27a9790097858b701ef4cf5814cb4f4.setIcon(div_icon_3ff4271855267f9749946ac47ed60298);
+        
+    
+        var popup_cc5e953dbdfeb7c3fdb15451d41868dd = L.popup({"maxWidth": 300});
+
+        
+            var html_6b4271f4f653b210ae7ab22fd177b584 = $(`<div id="html_6b4271f4f653b210ae7ab22fd177b584" style="width: 100.0%; height: 100.0%;">     <b> La Floresta</b><br>     <b>Total Score:</b> 75.6%<br>     <b>LGBTQ+ Safety:</b> 24.0%<br>     <b>Cost of Living:</b> 14.8%<br>     <b>Ease of Relocation:</b> 14.8%<br>     <b>Climate Resilience & Comfort:</b> 10.8%<br>     <b>Culture & Community:</b> 8.3%<br>     <b>Job Opportunities:</b> 2.9%<br><br>     <a href='https://docs.google.com/document/d/1YUdmOrN22LGauaH-lviuV3ye-OhQGsdFHtJ9aIE1yuA/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_cc5e953dbdfeb7c3fdb15451d41868dd.setContent(html_6b4271f4f653b210ae7ab22fd177b584);
+        
+
+        marker_b27a9790097858b701ef4cf5814cb4f4.bindPopup(popup_cc5e953dbdfeb7c3fdb15451d41868dd)
+        ;
+
+        
+    
+    
+            var marker_6539d1ebf9928d2e66ccea04c8a8d442 = L.marker(
+                [16.737, -92.6376],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_7903dfd880c553625e59bfdcf67f7e7a = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e32\u003c/div\u003e\n    "});
+            marker_6539d1ebf9928d2e66ccea04c8a8d442.setIcon(div_icon_7903dfd880c553625e59bfdcf67f7e7a);
+        
+    
+        var popup_2669087dd3cf513241638283fbf6de6d = L.popup({"maxWidth": 300});
+
+        
+            var html_a74bad6dc4fb7010e158fb4e6ce10643 = $(`<div id="html_a74bad6dc4fb7010e158fb4e6ce10643" style="width: 100.0%; height: 100.0%;">     <b>San Cristóbal de las Casas</b><br>     <b>Total Score:</b> 75.5%<br>     <b>LGBTQ+ Safety:</b> 19.8%<br>     <b>Cost of Living:</b> 18.2%<br>     <b>Ease of Relocation:</b> 15.5%<br>     <b>Climate Resilience & Comfort:</b> 11.0%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 2.5%<br><br>     <a href='https://docs.google.com/document/d/1W8OHL_-qBgah9qr1lU6wBkHFzfBv-LxU-N-xnjMZolI/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_2669087dd3cf513241638283fbf6de6d.setContent(html_a74bad6dc4fb7010e158fb4e6ce10643);
+        
+
+        marker_6539d1ebf9928d2e66ccea04c8a8d442.bindPopup(popup_2669087dd3cf513241638283fbf6de6d)
+        ;
+
+        
+    
+    
+            var marker_b2e74500e78fa4fad0f3b2ae47e2eb64 = L.marker(
+                [19.7008, -101.1844],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_ba0e9a585f410c62ee34917e59b5fc49 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e33\u003c/div\u003e\n    "});
+            marker_b2e74500e78fa4fad0f3b2ae47e2eb64.setIcon(div_icon_ba0e9a585f410c62ee34917e59b5fc49);
+        
+    
+        var popup_b811283df027274b42cd98df218e1320 = L.popup({"maxWidth": 300});
+
+        
+            var html_cb381dbeb508344c2b7bfa0d0438782c = $(`<div id="html_cb381dbeb508344c2b7bfa0d0438782c" style="width: 100.0%; height: 100.0%;">     <b>Morelia</b><br>     <b>Total Score:</b> 75.5%<br>     <b>LGBTQ+ Safety:</b> 19.2%<br>     <b>Cost of Living:</b> 17.8%<br>     <b>Ease of Relocation:</b> 16.0%<br>     <b>Climate Resilience & Comfort:</b> 11.5%<br>     <b>Culture & Community:</b> 8.2%<br>     <b>Job Opportunities:</b> 2.8%<br><br>     <a href='https://docs.google.com/document/d/1ZkosI1ZmEXo8XHq3d_vsfWV5g-OV5b9d07zIozLhGxs/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_b811283df027274b42cd98df218e1320.setContent(html_cb381dbeb508344c2b7bfa0d0438782c);
+        
+
+        marker_b2e74500e78fa4fad0f3b2ae47e2eb64.bindPopup(popup_b811283df027274b42cd98df218e1320)
+        ;
+
+        
+    
+    
+            var marker_a5ca48bffa3e5e9c47580d905b6cabc6 = L.marker(
+                [20.2969, -103.2554],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_d053bc769b94f88642332db83f463e3b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e34\u003c/div\u003e\n    "});
+            marker_a5ca48bffa3e5e9c47580d905b6cabc6.setIcon(div_icon_d053bc769b94f88642332db83f463e3b);
+        
+    
+        var popup_d3ff674cb87c426799e8c846c7cb66de = L.popup({"maxWidth": 300});
+
+        
+            var html_962ee438f7ee54e293ceaebc0eb50dcc = $(`<div id="html_962ee438f7ee54e293ceaebc0eb50dcc" style="width: 100.0%; height: 100.0%;">     <b>Ajijic</b><br>     <b>Total Score:</b> 75.4%<br>     <b>LGBTQ+ Safety:</b> 22.2%<br>     <b>Cost of Living:</b> 14.2%<br>     <b>Ease of Relocation:</b> 17.0%<br>     <b>Climate Resilience & Comfort:</b> 12.0%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 2.5%<br><br>     <a href='https://docs.google.com/document/d/1M6qQBVybRZyfdH_1_N8YhqMPVfsIbD0Dy63_TmvKLmA/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_d3ff674cb87c426799e8c846c7cb66de.setContent(html_962ee438f7ee54e293ceaebc0eb50dcc);
+        
+
+        marker_a5ca48bffa3e5e9c47580d905b6cabc6.bindPopup(popup_d3ff674cb87c426799e8c846c7cb66de)
+        ;
+
+        
+    
+    
+            var marker_a6a8306f6535e74b35403f774907abf2 = L.marker(
+                [-40.1579, -71.3532],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_b99065ab6a56d67ccfa516b30c1ab929 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e35\u003c/div\u003e\n    "});
+            marker_a6a8306f6535e74b35403f774907abf2.setIcon(div_icon_b99065ab6a56d67ccfa516b30c1ab929);
+        
+    
+        var popup_45a22ce8f1720cb4157448dbddf9ca56 = L.popup({"maxWidth": 300});
+
+        
+            var html_ad71c9a50b84e6de5e65c34db5f0dbaa = $(`<div id="html_ad71c9a50b84e6de5e65c34db5f0dbaa" style="width: 100.0%; height: 100.0%;">     <b>San Martín de los Andes</b><br>     <b>Total Score:</b> 75.3%<br>     <b>LGBTQ+ Safety:</b> 21.5%<br>     <b>Cost of Living:</b> 17.1%<br>     <b>Ease of Relocation:</b> 13.0%<br>     <b>Climate Resilience & Comfort:</b> 12.5%<br>     <b>Culture & Community:</b> 7.8%<br>     <b>Job Opportunities:</b> 3.4%<br><br>     <a href='https://docs.google.com/document/d/1ZKfi9yhWiILmIiBcUrv_kiSMAYwmbVD9NF9ElfPKEIg/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_45a22ce8f1720cb4157448dbddf9ca56.setContent(html_ad71c9a50b84e6de5e65c34db5f0dbaa);
+        
+
+        marker_a6a8306f6535e74b35403f774907abf2.bindPopup(popup_45a22ce8f1720cb4157448dbddf9ca56)
+        ;
+
+        
+    
+    
+            var marker_0ec6b05af4f0e0bbab280b3c2dc54ead = L.marker(
+                [-41.1335, -71.3103],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_267cb84ad290377deff471228d5f85bf = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e36\u003c/div\u003e\n    "});
+            marker_0ec6b05af4f0e0bbab280b3c2dc54ead.setIcon(div_icon_267cb84ad290377deff471228d5f85bf);
+        
+    
+        var popup_3286150741d5936e354b5e0e0b0c4f8c = L.popup({"maxWidth": 300});
+
+        
+            var html_98028af9488ab25af8d5425895dfe555 = $(`<div id="html_98028af9488ab25af8d5425895dfe555" style="width: 100.0%; height: 100.0%;">     <b>San Carlos de Bariloche</b><br>     <b>Total Score:</b> 75.1%<br>     <b>LGBTQ+ Safety:</b> 22.0%<br>     <b>Cost of Living:</b> 16.8%<br>     <b>Ease of Relocation:</b> 13.5%<br>     <b>Climate Resilience & Comfort:</b> 11.5%<br>     <b>Culture & Community:</b> 7.9%<br>     <b>Job Opportunities:</b> 3.4%<br><br>     <a href='https://docs.google.com/document/d/1o2l8tJULfhC5sV2zQVsJ_Snn_SV74sE7Xq7fIQPZbn8/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_3286150741d5936e354b5e0e0b0c4f8c.setContent(html_98028af9488ab25af8d5425895dfe555);
+        
+
+        marker_0ec6b05af4f0e0bbab280b3c2dc54ead.bindPopup(popup_3286150741d5936e354b5e0e0b0c4f8c)
+        ;
+
+        
+    
+    
+            var marker_f2a0ac5d405c0694312b510cefc318cc = L.marker(
+                [22.7709, -102.5832],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_fed20ba03db86e0c7ff57ca94100b3ce = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e37\u003c/div\u003e\n    "});
+            marker_f2a0ac5d405c0694312b510cefc318cc.setIcon(div_icon_fed20ba03db86e0c7ff57ca94100b3ce);
+        
+    
+        var popup_dc911050bbc4aee30161e2d8b4f8ad1c = L.popup({"maxWidth": 300});
+
+        
+            var html_2a96220905d2baa639b281f3a06b000f = $(`<div id="html_2a96220905d2baa639b281f3a06b000f" style="width: 100.0%; height: 100.0%;">     <b>Zacatecas</b><br>     <b>Total Score:</b> 75.0%<br>     <b>LGBTQ+ Safety:</b> 18.6%<br>     <b>Cost of Living:</b> 18.4%<br>     <b>Ease of Relocation:</b> 15.0%<br>     <b>Climate Resilience & Comfort:</b> 12.5%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 2.5%<br><br>     <a href='https://docs.google.com/document/d/1TU6zfpd5H3E7xa8BWQRjwsmyRa18v0STPzM8xQbfyLw/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_dc911050bbc4aee30161e2d8b4f8ad1c.setContent(html_2a96220905d2baa639b281f3a06b000f);
+        
+
+        marker_f2a0ac5d405c0694312b510cefc318cc.bindPopup(popup_dc911050bbc4aee30161e2d8b4f8ad1c)
+        ;
+
+        
+    
+    
+            var marker_ebd7d0cd993cce6226adf533221ae1ec = L.marker(
+                [-34.6177, -68.3301],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_32485a7e3a550d4a087b2c668cd77aaf = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e38\u003c/div\u003e\n    "});
+            marker_ebd7d0cd993cce6226adf533221ae1ec.setIcon(div_icon_32485a7e3a550d4a087b2c668cd77aaf);
+        
+    
+        var popup_51a13e4782956f8003303510cd192346 = L.popup({"maxWidth": 300});
+
+        
+            var html_824a99be499b380a7df4048c0d0df114 = $(`<div id="html_824a99be499b380a7df4048c0d0df114" style="width: 100.0%; height: 100.0%;">     <b>San Rafael</b><br>     <b>Total Score:</b> 74.9%<br>     <b>LGBTQ+ Safety:</b> 20.5%<br>     <b>Cost of Living:</b> 18.4%<br>     <b>Ease of Relocation:</b> 14.0%<br>     <b>Climate Resilience & Comfort:</b> 10.8%<br>     <b>Culture & Community:</b> 7.7%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1Q8Tm1Wk81JetsG67Pp1wlaUblS5l6Bf44vcsGAz22Gc/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_51a13e4782956f8003303510cd192346.setContent(html_824a99be499b380a7df4048c0d0df114);
+        
+
+        marker_ebd7d0cd993cce6226adf533221ae1ec.bindPopup(popup_51a13e4782956f8003303510cd192346)
+        ;
+
+        
+    
+    
+            var marker_12c6bc54d55783fdd01706b31ed12527 = L.marker(
+                [48.4284, -123.3656],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_4d6a78a5948d26dcf3eca3249f9ffdee = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e39\u003c/div\u003e\n    "});
+            marker_12c6bc54d55783fdd01706b31ed12527.setIcon(div_icon_4d6a78a5948d26dcf3eca3249f9ffdee);
+        
+    
+        var popup_147e5502873b685c916815c4c2aa040a = L.popup({"maxWidth": 300});
+
+        
+            var html_05d0366dc14be37971fda6c3a6cc6256 = $(`<div id="html_05d0366dc14be37971fda6c3a6cc6256" style="width: 100.0%; height: 100.0%;">     <b>Victoria</b><br>     <b>Total Score:</b> 74.8%<br>     <b>LGBTQ+ Safety:</b> 27.3%<br>     <b>Cost of Living:</b> 11.5%<br>     <b>Ease of Relocation:</b> 13.2%<br>     <b>Climate Resilience & Comfort:</b> 10.8%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/13b5pnvk7yShERGw13IdXycTYJzovMc4zooKvo6_Osq4/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_147e5502873b685c916815c4c2aa040a.setContent(html_05d0366dc14be37971fda6c3a6cc6256);
+        
+
+        marker_12c6bc54d55783fdd01706b31ed12527.bindPopup(popup_147e5502873b685c916815c4c2aa040a)
+        ;
+
+        
+    
+    
+            var marker_6353bf2f888807d4c61bb4dc01f5f090 = L.marker(
+                [-42.7692, -65.0385],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_36bb2568c97b909646676086963d5215 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e40\u003c/div\u003e\n    "});
+            marker_6353bf2f888807d4c61bb4dc01f5f090.setIcon(div_icon_36bb2568c97b909646676086963d5215);
+        
+    
+        var popup_ce78b47338b064506b559e838d71cd97 = L.popup({"maxWidth": 300});
+
+        
+            var html_dfc7ebef9fb067acb064efb9ac297cc5 = $(`<div id="html_dfc7ebef9fb067acb064efb9ac297cc5" style="width: 100.0%; height: 100.0%;">     <b>Puerto Madryn</b><br>     <b>Total Score:</b> 74.8%<br>     <b>LGBTQ+ Safety:</b> 21.0%<br>     <b>Cost of Living:</b> 17.9%<br>     <b>Ease of Relocation:</b> 13.8%<br>     <b>Climate Resilience & Comfort:</b> 11.0%<br>     <b>Culture & Community:</b> 7.6%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1o4c_ORabLPHxGxhD-20g-ED9kDimrTj2kTlejBB_BIc/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_ce78b47338b064506b559e838d71cd97.setContent(html_dfc7ebef9fb067acb064efb9ac297cc5);
+        
+
+        marker_6353bf2f888807d4c61bb4dc01f5f090.bindPopup(popup_ce78b47338b064506b559e838d71cd97)
+        ;
+
+        
+    
+    
+            var marker_6ad610cdb493e8dc37e6a54af78d4b13 = L.marker(
+                [-32.8895, -68.8458],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_7140cb1d8eb4aca29dadbb97d2426a4c = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e41\u003c/div\u003e\n    "});
+            marker_6ad610cdb493e8dc37e6a54af78d4b13.setIcon(div_icon_7140cb1d8eb4aca29dadbb97d2426a4c);
+        
+    
+        var popup_63a1887a3704d4141cc32531a5e09a1f = L.popup({"maxWidth": 300});
+
+        
+            var html_9cd98c439e9e619f7cd3fb6a103f5162 = $(`<div id="html_9cd98c439e9e619f7cd3fb6a103f5162" style="width: 100.0%; height: 100.0%;">     <b>Mendoza</b><br>     <b>Total Score:</b> 74.7%<br>     <b>LGBTQ+ Safety:</b> 22.9%<br>     <b>Cost of Living:</b> 17.6%<br>     <b>Ease of Relocation:</b> 14.5%<br>     <b>Climate Resilience & Comfort:</b> 7.8%<br>     <b>Culture & Community:</b> 8.2%<br>     <b>Job Opportunities:</b> 3.7%<br><br>     <a href='https://docs.google.com/document/d/1QRt8NIva6cIimSts1X23SiTcycgLc1AxPJxsGDkSbhc/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_63a1887a3704d4141cc32531a5e09a1f.setContent(html_9cd98c439e9e619f7cd3fb6a103f5162);
+        
+
+        marker_6ad610cdb493e8dc37e6a54af78d4b13.bindPopup(popup_63a1887a3704d4141cc32531a5e09a1f)
+        ;
+
+        
+    
+    
+            var marker_c111043bf8e4cb778e893c69e17f39e6 = L.marker(
+                [40.2033, -8.4103],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_e309277a0202758e977a121d58cde421 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e42\u003c/div\u003e\n    "});
+            marker_c111043bf8e4cb778e893c69e17f39e6.setIcon(div_icon_e309277a0202758e977a121d58cde421);
+        
+    
+        var popup_6917fcc8451c54150607e39e4d58f59b = L.popup({"maxWidth": 300});
+
+        
+            var html_54fe4074d17c609f32a3da14d23840a0 = $(`<div id="html_54fe4074d17c609f32a3da14d23840a0" style="width: 100.0%; height: 100.0%;">     <b>Coimbra</b><br>     <b>Total Score:</b> 74.5%<br>     <b>LGBTQ+ Safety:</b> 22.0%<br>     <b>Cost of Living:</b> 16.5%<br>     <b>Ease of Relocation:</b> 15.0%<br>     <b>Climate Resilience & Comfort:</b> 10.5%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 2.5%<br><br>     <a href='https://docs.google.com/document/d/1a7m3IrJXK9xqy4_wjeGLQ2V9x4wdTu5oI8p5p02kQuY/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_6917fcc8451c54150607e39e4d58f59b.setContent(html_54fe4074d17c609f32a3da14d23840a0);
+        
+
+        marker_c111043bf8e4cb778e893c69e17f39e6.bindPopup(popup_6917fcc8451c54150607e39e4d58f59b)
+        ;
+
+        
+    
+    
+            var marker_25ede560fd92476e7335f270ebd0dd75 = L.marker(
+                [-34.9, -54.95],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_9f8b2953a66eabb773be2edf55e0ddc0 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e43\u003c/div\u003e\n    "});
+            marker_25ede560fd92476e7335f270ebd0dd75.setIcon(div_icon_9f8b2953a66eabb773be2edf55e0ddc0);
+        
+    
+        var popup_0a92da35b2487bfb8769efcb20d13776 = L.popup({"maxWidth": 300});
+
+        
+            var html_d3848f1ea11e2c14d0493610ac2d4f02 = $(`<div id="html_d3848f1ea11e2c14d0493610ac2d4f02" style="width: 100.0%; height: 100.0%;">     <b>Maldonado</b><br>     <b>Total Score:</b> 74.4%<br>     <b>LGBTQ+ Safety:</b> 24.9%<br>     <b>Cost of Living:</b> 13.7%<br>     <b>Ease of Relocation:</b> 14.4%<br>     <b>Climate Resilience & Comfort:</b> 10.6%<br>     <b>Culture & Community:</b> 7.9%<br>     <b>Job Opportunities:</b> 2.9%<br><br>     <a href='https://docs.google.com/document/d/1wCiuPlojtsMRuVYwRmiNze-E9WEKYfz0JuMbArxsr-I/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_0a92da35b2487bfb8769efcb20d13776.setContent(html_d3848f1ea11e2c14d0493610ac2d4f02);
+        
+
+        marker_25ede560fd92476e7335f270ebd0dd75.bindPopup(popup_0a92da35b2487bfb8769efcb20d13776)
+        ;
+
+        
+    
+    
+            var marker_4584e2e48d7f7c2b296fccbf51865c0f = L.marker(
+                [-34.4606, -57.8336],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_5b99fa04c19559d0e90aed10a70c013b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e44\u003c/div\u003e\n    "});
+            marker_4584e2e48d7f7c2b296fccbf51865c0f.setIcon(div_icon_5b99fa04c19559d0e90aed10a70c013b);
+        
+    
+        var popup_7d9dfe9cc07152613036e250255683df = L.popup({"maxWidth": 300});
+
+        
+            var html_a4c7a59af35531f2e6dac8bb31dfa4da = $(`<div id="html_a4c7a59af35531f2e6dac8bb31dfa4da" style="width: 100.0%; height: 100.0%;">     <b>Colonia del Sacramento</b><br>     <b>Total Score:</b> 74.4%<br>     <b>LGBTQ+ Safety:</b> 23.9%<br>     <b>Cost of Living:</b> 13.1%<br>     <b>Ease of Relocation:</b> 15.2%<br>     <b>Climate Resilience & Comfort:</b> 11.0%<br>     <b>Culture & Community:</b> 8.2%<br>     <b>Job Opportunities:</b> 3.0%<br><br>     <a href='https://docs.google.com/document/d/1t1XbMaJAuM3-Jh2Xjr1f1gIehsrR6g5Q7ocncYP2qQE/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_7d9dfe9cc07152613036e250255683df.setContent(html_a4c7a59af35531f2e6dac8bb31dfa4da);
+        
+
+        marker_4584e2e48d7f7c2b296fccbf51865c0f.bindPopup(popup_7d9dfe9cc07152613036e250255683df)
+        ;
+
+        
+    
+    
+            var marker_c35383a952d040d3cb61f58cbad41e5f = L.marker(
+                [-34.76, -55.7],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_fbd830ac5c4b5da33bb6436e85343eca = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e45\u003c/div\u003e\n    "});
+            marker_c35383a952d040d3cb61f58cbad41e5f.setIcon(div_icon_fbd830ac5c4b5da33bb6436e85343eca);
+        
+    
+        var popup_2bbf98daa7527a7d3a34302a5bacb9da = L.popup({"maxWidth": 300});
+
+        
+            var html_d78fa920d538363fedd957a1f9a34745 = $(`<div id="html_d78fa920d538363fedd957a1f9a34745" style="width: 100.0%; height: 100.0%;">     <b>Atlántida </b><br>     <b>Total Score:</b> 74.3%<br>     <b>LGBTQ+ Safety:</b> 24.3%<br>     <b>Cost of Living:</b> 13.9%<br>     <b>Ease of Relocation:</b> 14.5%<br>     <b>Climate Resilience & Comfort:</b> 10.8%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 2.8%<br><br>     <a href='https://docs.google.com/document/d/1KIqLolAz-RKhRKSaUMECweqPHXssrvnTE6X68SbWjrc/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_2bbf98daa7527a7d3a34302a5bacb9da.setContent(html_d78fa920d538363fedd957a1f9a34745);
+        
+
+        marker_c35383a952d040d3cb61f58cbad41e5f.bindPopup(popup_2bbf98daa7527a7d3a34302a5bacb9da)
+        ;
+
+        
+    
+    
+            var marker_8cbe85253d93a645e5354199bb2bdf61 = L.marker(
+                [-34.9011, -56.1645],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_92c2e61e7426f2a600101b4992c44f9c = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e46\u003c/div\u003e\n    "});
+            marker_8cbe85253d93a645e5354199bb2bdf61.setIcon(div_icon_92c2e61e7426f2a600101b4992c44f9c);
+        
+    
+        var popup_6de932cece9764a5686efe8ccd45f956 = L.popup({"maxWidth": 300});
+
+        
+            var html_97c194274120380576d9389790bf90ff = $(`<div id="html_97c194274120380576d9389790bf90ff" style="width: 100.0%; height: 100.0%;">     <b>Montevideo</b><br>     <b>Total Score:</b> 74.0%<br>     <b>LGBTQ+ Safety:</b> 25.8%<br>     <b>Cost of Living:</b> 12.4%<br>     <b>Ease of Relocation:</b> 14.0%<br>     <b>Climate Resilience & Comfort:</b> 10.3%<br>     <b>Culture & Community:</b> 8.6%<br>     <b>Job Opportunities:</b> 2.9%<br><br>     <a href='https://docs.google.com/document/d/1zwFQzx7zdX8NbNlOfeSNEKYbZZ_Q3qGAF2RPk420MAg/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_6de932cece9764a5686efe8ccd45f956.setContent(html_97c194274120380576d9389790bf90ff);
+        
+
+        marker_8cbe85253d93a645e5354199bb2bdf61.bindPopup(popup_6de932cece9764a5686efe8ccd45f956)
+        ;
+
+        
+    
+    
+            var marker_c030c7394001d012109915eb61606c75 = L.marker(
+                [51.340199, 12.360103],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_5ef5991939103ad795ebf7246e1b3f0c = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e47\u003c/div\u003e\n    "});
+            marker_c030c7394001d012109915eb61606c75.setIcon(div_icon_5ef5991939103ad795ebf7246e1b3f0c);
+        
+    
+        var popup_9ea388a17b56637ce9ad709dff9f3826 = L.popup({"maxWidth": 300});
+
+        
+            var html_381a1246613ab3a21875523aa23c47b1 = $(`<div id="html_381a1246613ab3a21875523aa23c47b1" style="width: 100.0%; height: 100.0%;">     <b>Leipzig</b><br>     <b>Total Score:</b> 74.0%<br>     <b>LGBTQ+ Safety:</b> 26.0%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 10.0%<br>     <b>Climate Resilience & Comfort:</b> 9.5%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/13AlgR9702ulpY9rk5FnZ7vGtJwAUTdOcFElf6SyiyUY/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_9ea388a17b56637ce9ad709dff9f3826.setContent(html_381a1246613ab3a21875523aa23c47b1);
+        
+
+        marker_c030c7394001d012109915eb61606c75.bindPopup(popup_9ea388a17b56637ce9ad709dff9f3826)
+        ;
+
+        
+    
+    
+            var marker_6e684d8095b0b8fa9fe490723265a01e = L.marker(
+                [49.8951, -97.1384],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_af2cec83250d322a6d923b2954d4b470 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e48\u003c/div\u003e\n    "});
+            marker_6e684d8095b0b8fa9fe490723265a01e.setIcon(div_icon_af2cec83250d322a6d923b2954d4b470);
+        
+    
+        var popup_fb505f08987166f70d1f292559fe3898 = L.popup({"maxWidth": 300});
+
+        
+            var html_a0f6dbf24d445aa085ca2be7b1db8127 = $(`<div id="html_a0f6dbf24d445aa085ca2be7b1db8127" style="width: 100.0%; height: 100.0%;">     <b>Winnipeg </b><br>     <b>Total Score:</b> 73.9%<br>     <b>LGBTQ+ Safety:</b> 22.5%<br>     <b>Cost of Living:</b> 16.5%<br>     <b>Ease of Relocation:</b> 13.8%<br>     <b>Climate Resilience & Comfort:</b> 9.3%<br>     <b>Culture & Community:</b> 7.8%<br>     <b>Job Opportunities:</b> 4.0%<br><br>     <a href='https://docs.google.com/document/d/1ZfklsWQbWh6smvc46E9gwV0nNg_FuO89zIKHKIx8Trw/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_fb505f08987166f70d1f292559fe3898.setContent(html_a0f6dbf24d445aa085ca2be7b1db8127);
+        
+
+        marker_6e684d8095b0b8fa9fe490723265a01e.bindPopup(popup_fb505f08987166f70d1f292559fe3898)
+        ;
+
+        
+    
+    
+            var marker_19615f70aef450d3b9269b46381439b9 = L.marker(
+                [20.2114, -87.4654],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_bd7e9da099c455ae5cbff1ba9ac72c1f = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e49\u003c/div\u003e\n    "});
+            marker_19615f70aef450d3b9269b46381439b9.setIcon(div_icon_bd7e9da099c455ae5cbff1ba9ac72c1f);
+        
+    
+        var popup_45498b8376d60114dd023c5d6e13f15c = L.popup({"maxWidth": 300});
+
+        
+            var html_4672dea21e6f50ff577e32183077db62 = $(`<div id="html_4672dea21e6f50ff577e32183077db62" style="width: 100.0%; height: 100.0%;">     <b>Tulum</b><br>     <b>Total Score:</b> 73.6%<br>     <b>LGBTQ+ Safety:</b> 22.5%<br>     <b>Cost of Living:</b> 13.8%<br>     <b>Ease of Relocation:</b> 17.5%<br>     <b>Climate Resilience & Comfort:</b> 8.0%<br>     <b>Culture & Community:</b> 8.3%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1tODxvoakcgf03yfvezvBYSt9b03wnscPX-GSecwzOV8/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_45498b8376d60114dd023c5d6e13f15c.setContent(html_4672dea21e6f50ff577e32183077db62);
+        
+
+        marker_19615f70aef450d3b9269b46381439b9.bindPopup(popup_45498b8376d60114dd023c5d6e13f15c)
+        ;
+
+        
+    
+    
+            var marker_091feeca3737f24b40319b52941af184 = L.marker(
+                [53.5461, -113.4938],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_87fb874db267c35ba2fce3922e43088b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e50\u003c/div\u003e\n    "});
+            marker_091feeca3737f24b40319b52941af184.setIcon(div_icon_87fb874db267c35ba2fce3922e43088b);
+        
+    
+        var popup_69fcb0a13fea4e657028198ccffb3ea5 = L.popup({"maxWidth": 300});
+
+        
+            var html_3fccd045d5ceb4ccb728174b9770339f = $(`<div id="html_3fccd045d5ceb4ccb728174b9770339f" style="width: 100.0%; height: 100.0%;">     <b>Edmonton </b><br>     <b>Total Score:</b> 73.5%<br>     <b>LGBTQ+ Safety:</b> 21.8%<br>     <b>Cost of Living:</b> 16.8%<br>     <b>Ease of Relocation:</b> 14.2%<br>     <b>Climate Resilience & Comfort:</b> 9.0%<br>     <b>Culture & Community:</b> 7.2%<br>     <b>Job Opportunities:</b> 4.5%<br><br>     <a href='https://docs.google.com/document/d/1rWeOc-hS6k6B2ZNXG_w_ZxgY6h4EqtK6wk-GtPJ5ujc/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_69fcb0a13fea4e657028198ccffb3ea5.setContent(html_3fccd045d5ceb4ccb728174b9770339f);
+        
+
+        marker_091feeca3737f24b40319b52941af184.bindPopup(popup_69fcb0a13fea4e657028198ccffb3ea5)
+        ;
+
+        
+    
+    
+            var marker_c87dce61db0c5f5217bdb83c732d3a0b = L.marker(
+                [48.521636, 9.057645],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_66d0b334b62040c9d898d109961541e2 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e51\u003c/div\u003e\n    "});
+            marker_c87dce61db0c5f5217bdb83c732d3a0b.setIcon(div_icon_66d0b334b62040c9d898d109961541e2);
+        
+    
+        var popup_cd78ea48f6d2832034d10130746da657 = L.popup({"maxWidth": 300});
+
+        
+            var html_95ee823c948a9d9a9c3d6fcebf9cc114 = $(`<div id="html_95ee823c948a9d9a9c3d6fcebf9cc114" style="width: 100.0%; height: 100.0%;">     <b>Tübingen</b><br>     <b>Total Score:</b> 73.5%<br>     <b>LGBTQ+ Safety:</b> 25.0%<br>     <b>Cost of Living:</b> 16.5%<br>     <b>Ease of Relocation:</b> 9.5%<br>     <b>Climate Resilience & Comfort:</b> 10.0%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1BUMfwB2FCpcIprEYJnQRSL6DVByE74iqRYVAU45FZWk/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_cd78ea48f6d2832034d10130746da657.setContent(html_95ee823c948a9d9a9c3d6fcebf9cc114);
+        
+
+        marker_c87dce61db0c5f5217bdb83c732d3a0b.bindPopup(popup_cd78ea48f6d2832034d10130746da657)
+        ;
+
+        
+    
+    
+            var marker_d0d3f10a98aa0b131f050a742b893c5a = L.marker(
+                [41.5454, -8.4265],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_f1fe40698618dfe710a2c7c0cdbb86dc = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e52\u003c/div\u003e\n    "});
+            marker_d0d3f10a98aa0b131f050a742b893c5a.setIcon(div_icon_f1fe40698618dfe710a2c7c0cdbb86dc);
+        
+    
+        var popup_4353a39972dc099af219a843922f6c99 = L.popup({"maxWidth": 300});
+
+        
+            var html_2803d8cfa00cd5a87ceb810ece7b1342 = $(`<div id="html_2803d8cfa00cd5a87ceb810ece7b1342" style="width: 100.0%; height: 100.0%;">     <b>Braga</b><br>     <b>Total Score:</b> 73.5%<br>     <b>LGBTQ+ Safety:</b> 20.0%<br>     <b>Cost of Living:</b> 17.0%<br>     <b>Ease of Relocation:</b> 15.0%<br>     <b>Climate Resilience & Comfort:</b> 11.0%<br>     <b>Culture & Community:</b> 7.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1i3S4xNR1YIn0L6de17Dw9B9n_i08Yi1RLsjy5JlciKA/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_4353a39972dc099af219a843922f6c99.setContent(html_2803d8cfa00cd5a87ceb810ece7b1342);
+        
+
+        marker_d0d3f10a98aa0b131f050a742b893c5a.bindPopup(popup_4353a39972dc099af219a843922f6c99)
+        ;
+
+        
+    
+    
+            var marker_c8d398de8b2ccc01ef72989a33603601 = L.marker(
+                [-54.8019, -68.303],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_99fcbb6e2d6959f8efbab85122545461 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e53\u003c/div\u003e\n    "});
+            marker_c8d398de8b2ccc01ef72989a33603601.setIcon(div_icon_99fcbb6e2d6959f8efbab85122545461);
+        
+    
+        var popup_dd5ccba9eb8c20b9259bee2f8ecd4ba2 = L.popup({"maxWidth": 300});
+
+        
+            var html_a7b15e231bfc853869510685a3678697 = $(`<div id="html_a7b15e231bfc853869510685a3678697" style="width: 100.0%; height: 100.0%;">     <b>Ushuaia</b><br>     <b>Total Score:</b> 73.4%<br>     <b>LGBTQ+ Safety:</b> 22.5%<br>     <b>Cost of Living:</b> 16.2%<br>     <b>Ease of Relocation:</b> 12.0%<br>     <b>Climate Resilience & Comfort:</b> 12.0%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.2%<br><br>     <a href='https://docs.google.com/document/d/1wXEHbZD_EwAGlZ78GHn6oGNJl38QNmxEXlWKnbk-OUo/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_dd5ccba9eb8c20b9259bee2f8ecd4ba2.setContent(html_a7b15e231bfc853869510685a3678697);
+        
+
+        marker_c8d398de8b2ccc01ef72989a33603601.bindPopup(popup_dd5ccba9eb8c20b9259bee2f8ecd4ba2)
+        ;
+
+        
+    
+    
+            var marker_4790f6a394e261e694ed3a39d30963ab = L.marker(
+                [-34.4833, -54.3333],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_a6b606cb41ee289dbbe8dc935374f76f = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e54\u003c/div\u003e\n    "});
+            marker_4790f6a394e261e694ed3a39d30963ab.setIcon(div_icon_a6b606cb41ee289dbbe8dc935374f76f);
+        
+    
+        var popup_eabd829e375189605a1f4def5ae62403 = L.popup({"maxWidth": 300});
+
+        
+            var html_99eda4b975bdebd8e5e67d51b7ee2bc4 = $(`<div id="html_99eda4b975bdebd8e5e67d51b7ee2bc4" style="width: 100.0%; height: 100.0%;">     <b>Rocha</b><br>     <b>Total Score:</b> 73.1%<br>     <b>LGBTQ+ Safety:</b> 22.5%<br>     <b>Cost of Living:</b> 15.4%<br>     <b>Ease of Relocation:</b> 13.9%<br>     <b>Climate Resilience & Comfort:</b> 11.2%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 2.6%<br><br>     <a href='https://docs.google.com/document/d/145y6EsIBBiiu4TUPtv8zb_-neuxcRUyO01FEZgSdLu0/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_eabd829e375189605a1f4def5ae62403.setContent(html_99eda4b975bdebd8e5e67d51b7ee2bc4);
+        
+
+        marker_4790f6a394e261e694ed3a39d30963ab.bindPopup(popup_eabd829e375189605a1f4def5ae62403)
+        ;
+
+        
+    
+    
+            var marker_69c0a2956bbcddfc1776df13524ce759 = L.marker(
+                [-32.3214, -58.0756],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_a78e10ee82ae0341f7157835e69e1b40 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e55\u003c/div\u003e\n    "});
+            marker_69c0a2956bbcddfc1776df13524ce759.setIcon(div_icon_a78e10ee82ae0341f7157835e69e1b40);
+        
+    
+        var popup_17185f383fefcead0fd60f6323fe0f5b = L.popup({"maxWidth": 300});
+
+        
+            var html_bc5f33d669a6058556c0e925a1ec78a4 = $(`<div id="html_bc5f33d669a6058556c0e925a1ec78a4" style="width: 100.0%; height: 100.0%;">     <b>Paysandú </b><br>     <b>Total Score:</b> 73.1%<br>     <b>LGBTQ+ Safety:</b> 21.9%<br>     <b>Cost of Living:</b> 16.4%<br>     <b>Ease of Relocation:</b> 13.5%<br>     <b>Climate Resilience & Comfort:</b> 10.5%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.3%<br><br>     <a href='https://docs.google.com/document/d/1x8c442gK2WR4wQrBsX9_P3E5yXTE8Glkgd3rdMV-j70/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_17185f383fefcead0fd60f6323fe0f5b.setContent(html_bc5f33d669a6058556c0e925a1ec78a4);
+        
+
+        marker_69c0a2956bbcddfc1776df13524ce759.bindPopup(popup_17185f383fefcead0fd60f6323fe0f5b)
+        ;
+
+        
+    
+    
+            var marker_f393c61f0858d4f24bf4327fce653aee = L.marker(
+                [-34.3391, -56.7146],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_d4874e8a004a8c77dd9954075472234b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e56\u003c/div\u003e\n    "});
+            marker_f393c61f0858d4f24bf4327fce653aee.setIcon(div_icon_d4874e8a004a8c77dd9954075472234b);
+        
+    
+        var popup_44a44a50b8db21ef9564bf21d0da376b = L.popup({"maxWidth": 300});
+
+        
+            var html_cf61dfa827563b8af3f9c219459f9793 = $(`<div id="html_cf61dfa827563b8af3f9c219459f9793" style="width: 100.0%; height: 100.0%;">     <b>San José de Mayo</b><br>     <b>Total Score:</b> 73.1%<br>     <b>LGBTQ+ Safety:</b> 21.2%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 14.4%<br>     <b>Climate Resilience & Comfort:</b> 10.7%<br>     <b>Culture & Community:</b> 7.8%<br>     <b>Job Opportunities:</b> 3.0%<br><br>     <a href='https://docs.google.com/document/d/1HxdTj-7R9OjXDUK7YIsTfl6EZo3eCpUke1LuNgwFWhI/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_44a44a50b8db21ef9564bf21d0da376b.setContent(html_cf61dfa827563b8af3f9c219459f9793);
+        
+
+        marker_f393c61f0858d4f24bf4327fce653aee.bindPopup(popup_44a44a50b8db21ef9564bf21d0da376b)
+        ;
+
+        
+    
+    
+            var marker_61319779ba158c1dbc2bbd1561886549 = L.marker(
+                [41.444, -8.2962],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_31ae7e67c5beaf89e18b351682b7c34f = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e57\u003c/div\u003e\n    "});
+            marker_61319779ba158c1dbc2bbd1561886549.setIcon(div_icon_31ae7e67c5beaf89e18b351682b7c34f);
+        
+    
+        var popup_ce89cd4ea3c3db596d290cefa47e152f = L.popup({"maxWidth": 300});
+
+        
+            var html_339f6627ef9305b7b89822d648b03118 = $(`<div id="html_339f6627ef9305b7b89822d648b03118" style="width: 100.0%; height: 100.0%;">     <b>Guimarães</b><br>     <b>Total Score:</b> 73.0%<br>     <b>LGBTQ+ Safety:</b> 19.5%<br>     <b>Cost of Living:</b> 17.5%<br>     <b>Ease of Relocation:</b> 14.5%<br>     <b>Climate Resilience & Comfort:</b> 11.0%<br>     <b>Culture & Community:</b> 7.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1Bh9J5hOS3VrgF424taJj46xXd48qyM7YI78zq9F82Do/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_ce89cd4ea3c3db596d290cefa47e152f.setContent(html_339f6627ef9305b7b89822d648b03118);
+        
+
+        marker_61319779ba158c1dbc2bbd1561886549.bindPopup(popup_ce89cd4ea3c3db596d290cefa47e152f)
+        ;
+
+        
+    
+    
+            var marker_0e504e4947f591776bd5f3b96b16ac9a = L.marker(
+                [49.887, -119.496],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_7fb79c732f9538ce13a6033fe255681d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e58\u003c/div\u003e\n    "});
+            marker_0e504e4947f591776bd5f3b96b16ac9a.setIcon(div_icon_7fb79c732f9538ce13a6033fe255681d);
+        
+    
+        var popup_f9d951ef56811501b687781f06e1a435 = L.popup({"maxWidth": 300});
+
+        
+            var html_98fb662bfb86bfb9e1964f14065c8bb6 = $(`<div id="html_98fb662bfb86bfb9e1964f14065c8bb6" style="width: 100.0%; height: 100.0%;">     <b>Kelowna</b><br>     <b>Total Score:</b> 73.0%<br>     <b>LGBTQ+ Safety:</b> 24.5%<br>     <b>Cost of Living:</b> 14.5%<br>     <b>Ease of Relocation:</b> 13.5%<br>     <b>Climate Resilience & Comfort:</b> 8.5%<br>     <b>Culture & Community:</b> 7.8%<br>     <b>Job Opportunities:</b> 4.2%<br><br>     <a href='https://docs.google.com/document/d/1X_CTtEIC5Sh1sMBGpJbk0GsKX2Oqy8iVjcggIRnSjHg/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_f9d951ef56811501b687781f06e1a435.setContent(html_98fb662bfb86bfb9e1964f14065c8bb6);
+        
+
+        marker_0e504e4947f591776bd5f3b96b16ac9a.bindPopup(popup_f9d951ef56811501b687781f06e1a435)
+        ;
+
+        
+    
+    
+            var marker_327e63488843d8f2f5c2ff4cfb393506 = L.marker(
+                [51.227741, 6.773456],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_dfa1d40e42b0dfcf2c20ac1078be58d7 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e59\u003c/div\u003e\n    "});
+            marker_327e63488843d8f2f5c2ff4cfb393506.setIcon(div_icon_dfa1d40e42b0dfcf2c20ac1078be58d7);
+        
+    
+        var popup_0b88c585a67114bb6002ee1b90bc5b6d = L.popup({"maxWidth": 300});
+
+        
+            var html_b2d4b9c5e14fdfa076bee353fcc89ca0 = $(`<div id="html_b2d4b9c5e14fdfa076bee353fcc89ca0" style="width: 100.0%; height: 100.0%;">     <b>Düsseldorf</b><br>     <b>Total Score:</b> 73.0%<br>     <b>LGBTQ+ Safety:</b> 26.0%<br>     <b>Cost of Living:</b> 13.0%<br>     <b>Ease of Relocation:</b> 11.0%<br>     <b>Climate Resilience & Comfort:</b> 10.5%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 4.0%<br><br>     <a href='https://docs.google.com/document/d/178n5DvNiVdJ5pkPMcV1uukxLw6LhTIPyhDu6_ehRHNM/edit?tab=t.7mewyk2y3aaz' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_0b88c585a67114bb6002ee1b90bc5b6d.setContent(html_b2d4b9c5e14fdfa076bee353fcc89ca0);
+        
+
+        marker_327e63488843d8f2f5c2ff4cfb393506.bindPopup(popup_0b88c585a67114bb6002ee1b90bc5b6d)
+        ;
+
+        
+    
+    
+            var marker_59d747bcf4ce4e5a10cc13e236bfe0bf = L.marker(
+                [51.960665, 7.626135],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_c5add2fd1eb81c484a5ae1b15e78cbb2 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e60\u003c/div\u003e\n    "});
+            marker_59d747bcf4ce4e5a10cc13e236bfe0bf.setIcon(div_icon_c5add2fd1eb81c484a5ae1b15e78cbb2);
+        
+    
+        var popup_3c78372ed83f79ee4f07e5668af9b05a = L.popup({"maxWidth": 300});
+
+        
+            var html_54ebc1303df56e5d36d9ac54a12fef00 = $(`<div id="html_54ebc1303df56e5d36d9ac54a12fef00" style="width: 100.0%; height: 100.0%;">     <b>Münster</b><br>     <b>Total Score:</b> 73.0%<br>     <b>LGBTQ+ Safety:</b> 25.0%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 10.0%<br>     <b>Climate Resilience & Comfort:</b> 10.5%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1bVxQFy6grp5RJK5K-tf4IB4Lzs3B9DS8_CKWhlo8sxc/edit?tab=t.7mewyk2y3aaz' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_3c78372ed83f79ee4f07e5668af9b05a.setContent(html_54ebc1303df56e5d36d9ac54a12fef00);
+        
+
+        marker_59d747bcf4ce4e5a10cc13e236bfe0bf.bindPopup(popup_3c78372ed83f79ee4f07e5668af9b05a)
+        ;
+
+        
+    
+    
+            var marker_07bf54686cb6df396e8c70ff2105c8f1 = L.marker(
+                [52.390569, 13.064473],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_9a10f0302089a3d4f7b5b1a9909d38c9 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e61\u003c/div\u003e\n    "});
+            marker_07bf54686cb6df396e8c70ff2105c8f1.setIcon(div_icon_9a10f0302089a3d4f7b5b1a9909d38c9);
+        
+    
+        var popup_ac8bce96a30948e50ceaca332905e8b0 = L.popup({"maxWidth": 300});
+
+        
+            var html_022193fce80b8ad9f0bbd4160fc20d64 = $(`<div id="html_022193fce80b8ad9f0bbd4160fc20d64" style="width: 100.0%; height: 100.0%;">     <b>Potsdam</b><br>     <b>Total Score:</b> 73.0%<br>     <b>LGBTQ+ Safety:</b> 25.0%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 10.5%<br>     <b>Climate Resilience & Comfort:</b> 10.0%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1JmkXgYg8tWBiCpHFLanUtAvHnONM_VHEUg4jSDRcw0U/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_ac8bce96a30948e50ceaca332905e8b0.setContent(html_022193fce80b8ad9f0bbd4160fc20d64);
+        
+
+        marker_07bf54686cb6df396e8c70ff2105c8f1.bindPopup(popup_ac8bce96a30948e50ceaca332905e8b0)
+        ;
+
+        
+    
+    
+            var marker_91c73251af1678ef0fba0dc47968875c = L.marker(
+                [-31.3833, -57.9667],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_a6216d5763497b427a108b8b51a63e07 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e62\u003c/div\u003e\n    "});
+            marker_91c73251af1678ef0fba0dc47968875c.setIcon(div_icon_a6216d5763497b427a108b8b51a63e07);
+        
+    
+        var popup_2fa80d2d2d3b3e3f4975a1c2e30cafcd = L.popup({"maxWidth": 300});
+
+        
+            var html_6450c1b5132af2e7b528fe97a3690c00 = $(`<div id="html_6450c1b5132af2e7b528fe97a3690c00" style="width: 100.0%; height: 100.0%;">     <b>Salto</b><br>     <b>Total Score:</b> 72.7%<br>     <b>LGBTQ+ Safety:</b> 22.1%<br>     <b>Cost of Living:</b> 16.1%<br>     <b>Ease of Relocation:</b> 12.8%<br>     <b>Climate Resilience & Comfort:</b> 10.9%<br>     <b>Culture & Community:</b> 7.7%<br>     <b>Job Opportunities:</b> 3.1%<br><br>     <a href='https://docs.google.com/document/d/1oRWZt3B8aQGLiQ7z-rQ9v5gfhnFkUfAA0Zoeqfx3mf8/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_2fa80d2d2d3b3e3f4975a1c2e30cafcd.setContent(html_6450c1b5132af2e7b528fe97a3690c00);
+        
+
+        marker_91c73251af1678ef0fba0dc47968875c.bindPopup(popup_2fa80d2d2d3b3e3f4975a1c2e30cafcd)
+        ;
+
+        
+    
+    
+            var marker_478f30260f419cec50fdbe19f6a512a2 = L.marker(
+                [49.6935, -112.8418],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_2e2aa7ae1856f7df7f9a516be1f44176 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e63\u003c/div\u003e\n    "});
+            marker_478f30260f419cec50fdbe19f6a512a2.setIcon(div_icon_2e2aa7ae1856f7df7f9a516be1f44176);
+        
+    
+        var popup_3eea56baf861d115054d1f32a47feecf = L.popup({"maxWidth": 300});
+
+        
+            var html_3dbe13a85545eaa998d915c7669e84a8 = $(`<div id="html_3dbe13a85545eaa998d915c7669e84a8" style="width: 100.0%; height: 100.0%;">     <b>Lethbridge </b><br>     <b>Total Score:</b> 72.6%<br>     <b>LGBTQ+ Safety:</b> 22.2%<br>     <b>Cost of Living:</b> 17.5%<br>     <b>Ease of Relocation:</b> 13.8%<br>     <b>Climate Resilience & Comfort:</b> 7.9%<br>     <b>Culture & Community:</b> 7.0%<br>     <b>Job Opportunities:</b> 4.2%<br><br>     <a href='https://docs.google.com/document/d/1CVpAI2Fj2N3SszXtq8YddIeEJNQxRcg1OOd5Us958y0/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_3eea56baf861d115054d1f32a47feecf.setContent(html_3dbe13a85545eaa998d915c7669e84a8);
+        
+
+        marker_478f30260f419cec50fdbe19f6a512a2.bindPopup(popup_3eea56baf861d115054d1f32a47feecf)
+        ;
+
+        
+    
+    
+            var marker_a57a627034787b7e9c496d4659d5e46c = L.marker(
+                [31.3172, -113.5362],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_5b749985044e1ca4cc963357a20fff93 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e64\u003c/div\u003e\n    "});
+            marker_a57a627034787b7e9c496d4659d5e46c.setIcon(div_icon_5b749985044e1ca4cc963357a20fff93);
+        
+    
+        var popup_c94e1792bc5f512a04259137ff6dd04c = L.popup({"maxWidth": 300});
+
+        
+            var html_a4f521c6ba4db41397303627d1fc0f0a = $(`<div id="html_a4f521c6ba4db41397303627d1fc0f0a" style="width: 100.0%; height: 100.0%;">     <b>Puerto Peñasco</b><br>     <b>Total Score:</b> 72.6%<br>     <b>LGBTQ+ Safety:</b> 18.9%<br>     <b>Cost of Living:</b> 15.2%<br>     <b>Ease of Relocation:</b> 18.5%<br>     <b>Climate Resilience & Comfort:</b> 9.0%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1j5PDcJuJLutq41TADG7jhGWLjcr_vWMbWpjpw5-Uv98/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_c94e1792bc5f512a04259137ff6dd04c.setContent(html_a4f521c6ba4db41397303627d1fc0f0a);
+        
+
+        marker_a57a627034787b7e9c496d4659d5e46c.bindPopup(popup_c94e1792bc5f512a04259137ff6dd04c)
+        ;
+
+        
+    
+    
+            var marker_c466028c858483543277c5edb745f7d7 = L.marker(
+                [52.375892, 9.73201],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_5238ece0e56412bde423ecbb22172333 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e65\u003c/div\u003e\n    "});
+            marker_c466028c858483543277c5edb745f7d7.setIcon(div_icon_5238ece0e56412bde423ecbb22172333);
+        
+    
+        var popup_ecbafaa64d3365766bee2f528043114a = L.popup({"maxWidth": 300});
+
+        
+            var html_a7bff4049056518ab4005be1fbcc2cc8 = $(`<div id="html_a7bff4049056518ab4005be1fbcc2cc8" style="width: 100.0%; height: 100.0%;">     <b>Hannover</b><br>     <b>Total Score:</b> 72.5%<br>     <b>LGBTQ+ Safety:</b> 26.0%<br>     <b>Cost of Living:</b> 15.0%<br>     <b>Ease of Relocation:</b> 10.0%<br>     <b>Climate Resilience & Comfort:</b> 10.0%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1otkFP8xcBxhbVuq157tVL9HjBQ4srup0l1PdD_ebFxU/edit?tab=t.7mewyk2y3aaz' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_ecbafaa64d3365766bee2f528043114a.setContent(html_a7bff4049056518ab4005be1fbcc2cc8);
+        
+
+        marker_c466028c858483543277c5edb745f7d7.bindPopup(popup_ecbafaa64d3365766bee2f528043114a)
+        ;
+
+        
+    
+    
+            var marker_64d5991566d5b1cf8ed6cab9386980aa = L.marker(
+                [50.775346, 6.083887],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_3513eed7d53ed26551d8f5e6f6903f94 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e66\u003c/div\u003e\n    "});
+            marker_64d5991566d5b1cf8ed6cab9386980aa.setIcon(div_icon_3513eed7d53ed26551d8f5e6f6903f94);
+        
+    
+        var popup_abb201651b5c30c4808b4de4ad5784df = L.popup({"maxWidth": 300});
+
+        
+            var html_8e945b3592a201bb38adbd7aa44dae6f = $(`<div id="html_8e945b3592a201bb38adbd7aa44dae6f" style="width: 100.0%; height: 100.0%;">     <b>Aachen</b><br>     <b>Total Score:</b> 72.5%<br>     <b>LGBTQ+ Safety:</b> 25.0%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 10.0%<br>     <b>Climate Resilience & Comfort:</b> 10.5%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/12S19_jP_QHN7VW6JgnUG5u1j0td2bVFGOZB8BUTX4WA/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_abb201651b5c30c4808b4de4ad5784df.setContent(html_8e945b3592a201bb38adbd7aa44dae6f);
+        
+
+        marker_64d5991566d5b1cf8ed6cab9386980aa.bindPopup(popup_abb201651b5c30c4808b4de4ad5784df)
+        ;
+
+        
+    
+    
+            var marker_ff6f21f2798c9b6a8f5e73e7a601f946 = L.marker(
+                [40.661, -7.9097],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_4774dd98a90eed6fdb65ae249144bc04 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e67\u003c/div\u003e\n    "});
+            marker_ff6f21f2798c9b6a8f5e73e7a601f946.setIcon(div_icon_4774dd98a90eed6fdb65ae249144bc04);
+        
+    
+        var popup_9a72afb327f303b12a3489b8b7419dba = L.popup({"maxWidth": 300});
+
+        
+            var html_d449b360de288e9590b47b5e17b364fc = $(`<div id="html_d449b360de288e9590b47b5e17b364fc" style="width: 100.0%; height: 100.0%;">     <b>Viseu </b><br>     <b>Total Score:</b> 72.5%<br>     <b>LGBTQ+ Safety:</b> 19.0%<br>     <b>Cost of Living:</b> 18.0%<br>     <b>Ease of Relocation:</b> 14.0%<br>     <b>Climate Resilience & Comfort:</b> 11.0%<br>     <b>Culture & Community:</b> 7.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1IVUqe-_2_bgT9r1gMCNKx2EGP-EL8Uywi5QztJHfRrY/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_9a72afb327f303b12a3489b8b7419dba.setContent(html_d449b360de288e9590b47b5e17b364fc);
+        
+
+        marker_ff6f21f2798c9b6a8f5e73e7a601f946.bindPopup(popup_9a72afb327f303b12a3489b8b7419dba)
+        ;
+
+        
+    
+    
+            var marker_4781b937141584652ec110324e711cc0 = L.marker(
+                [-34.8629, -55.274],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_9443894bcbe3cb95600a0d7bf34394cb = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e68\u003c/div\u003e\n    "});
+            marker_4781b937141584652ec110324e711cc0.setIcon(div_icon_9443894bcbe3cb95600a0d7bf34394cb);
+        
+    
+        var popup_9858658c46dd9d221c4a7461700a5e1f = L.popup({"maxWidth": 300});
+
+        
+            var html_1060b4a05834880c818626a81ad18a64 = $(`<div id="html_1060b4a05834880c818626a81ad18a64" style="width: 100.0%; height: 100.0%;">     <b>Piriápolis </b><br>     <b>Total Score:</b> 72.4%<br>     <b>LGBTQ+ Safety:</b> 23.5%<br>     <b>Cost of Living:</b> 14.2%<br>     <b>Ease of Relocation:</b> 14.1%<br>     <b>Climate Resilience & Comfort:</b> 10.4%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 2.7%<br><br>     <a href='https://docs.google.com/document/d/1Zf30M3YY7T13xIlCEdbZqx92bvxHV1gcTZ2njqcaSno/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_9858658c46dd9d221c4a7461700a5e1f.setContent(html_1060b4a05834880c818626a81ad18a64);
+        
+
+        marker_4781b937141584652ec110324e711cc0.bindPopup(popup_9858658c46dd9d221c4a7461700a5e1f)
+        ;
+
+        
+    
+    
+            var marker_ff553c9ac33953313e92dedd438f728e = L.marker(
+                [49.1659, -123.9401],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_5fb43de9cf9954e0e88b0ff7da29e2ca = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e69\u003c/div\u003e\n    "});
+            marker_ff553c9ac33953313e92dedd438f728e.setIcon(div_icon_5fb43de9cf9954e0e88b0ff7da29e2ca);
+        
+    
+        var popup_c279e904153907ae741edc1c188cfef3 = L.popup({"maxWidth": 300});
+
+        
+            var html_161112c414e5132e439e75926e1ea0a1 = $(`<div id="html_161112c414e5132e439e75926e1ea0a1" style="width: 100.0%; height: 100.0%;">     <b>Nanaimo</b><br>     <b>Total Score:</b> 72.2%<br>     <b>LGBTQ+ Safety:</b> 24.0%<br>     <b>Cost of Living:</b> 15.2%<br>     <b>Ease of Relocation:</b> 13.0%<br>     <b>Climate Resilience & Comfort:</b> 8.5%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 4.0%<br><br>     <a href='https://docs.google.com/document/d/1oqQRlqzku-x9ttUivP4sW5geYZw3L9TuhawoLovnLKk/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_c279e904153907ae741edc1c188cfef3.setContent(html_161112c414e5132e439e75926e1ea0a1);
+        
+
+        marker_ff553c9ac33953313e92dedd438f728e.bindPopup(popup_c279e904153907ae741edc1c188cfef3)
+        ;
+
+        
+    
+    
+            var marker_3deaa6d1b76a038e1fee9ca942562b5a = L.marker(
+                [45.9636, -66.6431],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_c426d0aed74a32f23a7810c2f733fe79 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e70\u003c/div\u003e\n    "});
+            marker_3deaa6d1b76a038e1fee9ca942562b5a.setIcon(div_icon_c426d0aed74a32f23a7810c2f733fe79);
+        
+    
+        var popup_c49da44d3b09ca92408bc1035cc53312 = L.popup({"maxWidth": 300});
+
+        
+            var html_3cdacff2a58d3fea50058a60c5eb4bcf = $(`<div id="html_3cdacff2a58d3fea50058a60c5eb4bcf" style="width: 100.0%; height: 100.0%;">     <b>Fredericton </b><br>     <b>Total Score:</b> 72.1%<br>     <b>LGBTQ+ Safety:</b> 22.5%<br>     <b>Cost of Living:</b> 16.5%<br>     <b>Ease of Relocation:</b> 13.2%<br>     <b>Climate Resilience & Comfort:</b> 8.7%<br>     <b>Culture & Community:</b> 7.2%<br>     <b>Job Opportunities:</b> 4.0%<br><br>     <a href='https://docs.google.com/document/d/1rGssXQVtV1ueXXS36jiRoNvBqpUrtdc-d4lyEuqu0Is/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_c49da44d3b09ca92408bc1035cc53312.setContent(html_3cdacff2a58d3fea50058a60c5eb4bcf);
+        
+
+        marker_3deaa6d1b76a038e1fee9ca942562b5a.bindPopup(popup_c49da44d3b09ca92408bc1035cc53312)
+        ;
+
+        
+    
+    
+            var marker_b5e72b08b544cd580f951b52ceba2324 = L.marker(
+                [-34.7528, -55.7179],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_073d170365029ec82c2765f2d26ccf49 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e71\u003c/div\u003e\n    "});
+            marker_b5e72b08b544cd580f951b52ceba2324.setIcon(div_icon_073d170365029ec82c2765f2d26ccf49);
+        
+    
+        var popup_6b5174dd6e177b98db17fe5346f319e9 = L.popup({"maxWidth": 300});
+
+        
+            var html_8c640bc8a9420166d07fd0b977b01294 = $(`<div id="html_8c640bc8a9420166d07fd0b977b01294" style="width: 100.0%; height: 100.0%;">     <b>Parque del Plata</b><br>     <b>Total Score:</b> 72.1%<br>     <b>LGBTQ+ Safety:</b> 21.6%<br>     <b>Cost of Living:</b> 15.2%<br>     <b>Ease of Relocation:</b> 14.6%<br>     <b>Climate Resilience & Comfort:</b> 10.7%<br>     <b>Culture & Community:</b> 7.2%<br>     <b>Job Opportunities:</b> 2.8%<br><br>     <a href='https://docs.google.com/document/d/17rMlxYmLsJv5ODZkF087FvW14L8eGrgZIP-syWZ_F4U/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_6b5174dd6e177b98db17fe5346f319e9.setContent(html_8c640bc8a9420166d07fd0b977b01294);
+        
+
+        marker_b5e72b08b544cd580f951b52ceba2324.bindPopup(popup_6b5174dd6e177b98db17fe5346f319e9)
+        ;
+
+        
+    
+    
+            var marker_d37af7477c15546ab6c63a23de76a0d2 = L.marker(
+                [-24.7821, -65.4232],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_ecdb89d201299bdefb7cec123f0e0077 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e72\u003c/div\u003e\n    "});
+            marker_d37af7477c15546ab6c63a23de76a0d2.setIcon(div_icon_ecdb89d201299bdefb7cec123f0e0077);
+        
+    
+        var popup_99c6250320434902b8b78302d34b08db = L.popup({"maxWidth": 300});
+
+        
+            var html_e35d2469d021586b614c26857f5eed78 = $(`<div id="html_e35d2469d021586b614c26857f5eed78" style="width: 100.0%; height: 100.0%;">     <b>Salta</b><br>     <b>Total Score:</b> 72.1%<br>     <b>LGBTQ+ Safety:</b> 19.8%<br>     <b>Cost of Living:</b> 18.2%<br>     <b>Ease of Relocation:</b> 14.2%<br>     <b>Climate Resilience & Comfort:</b> 9.5%<br>     <b>Culture & Community:</b> 7.2%<br>     <b>Job Opportunities:</b> 3.2%<br><br>     <a href='https://docs.google.com/document/d/1JNhuteD1lsrz10ywh_MsGYT95cm5hkEymvJHEOye4ms/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_99c6250320434902b8b78302d34b08db.setContent(html_e35d2469d021586b614c26857f5eed78);
+        
+
+        marker_d37af7477c15546ab6c63a23de76a0d2.bindPopup(popup_99c6250320434902b8b78302d34b08db)
+        ;
+
+        
+    
+    
+            var marker_860643962a00835148187eac554a2525 = L.marker(
+                [53.551086, 9.993682],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_731ebe9f8975b1aeb65d7c415c0fe4b9 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e73\u003c/div\u003e\n    "});
+            marker_860643962a00835148187eac554a2525.setIcon(div_icon_731ebe9f8975b1aeb65d7c415c0fe4b9);
+        
+    
+        var popup_dc63cc998c244f8299a1a197cd1ffc8d = L.popup({"maxWidth": 300});
+
+        
+            var html_9d86229f0f364c6f48c55dcdcf777e6b = $(`<div id="html_9d86229f0f364c6f48c55dcdcf777e6b" style="width: 100.0%; height: 100.0%;">     <b>Hamburg</b><br>     <b>Total Score:</b> 72.0%<br>     <b>LGBTQ+ Safety:</b> 27.0%<br>     <b>Cost of Living:</b> 13.0%<br>     <b>Ease of Relocation:</b> 10.0%<br>     <b>Climate Resilience & Comfort:</b> 9.5%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1kRnK1T9DZ1a1I3aATyvzbNk1bEPhc83QYmPo70YkjRs/edit?tab=t.7mewyk2y3aaz' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_dc63cc998c244f8299a1a197cd1ffc8d.setContent(html_9d86229f0f364c6f48c55dcdcf777e6b);
+        
+
+        marker_860643962a00835148187eac554a2525.bindPopup(popup_dc63cc998c244f8299a1a197cd1ffc8d)
+        ;
+
+        
+    
+    
+            var marker_236c1fa5f75abf0f867bee72127c633e = L.marker(
+                [50.979493, 11.323544],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_12eadb7ed6f7eda32fdfcda4f819fa65 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e74\u003c/div\u003e\n    "});
+            marker_236c1fa5f75abf0f867bee72127c633e.setIcon(div_icon_12eadb7ed6f7eda32fdfcda4f819fa65);
+        
+    
+        var popup_9b4063286814c46a606c06389008b5f7 = L.popup({"maxWidth": 300});
+
+        
+            var html_b46c85ae56e306bb894435e0a42d1776 = $(`<div id="html_b46c85ae56e306bb894435e0a42d1776" style="width: 100.0%; height: 100.0%;">     <b>Weimar</b><br>     <b>Total Score:</b> 72.0%<br>     <b>LGBTQ+ Safety:</b> 23.0%<br>     <b>Cost of Living:</b> 17.0%<br>     <b>Ease of Relocation:</b> 9.5%<br>     <b>Climate Resilience & Comfort:</b> 10.5%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 3.0%<br><br>     <a href='https://docs.google.com/document/d/1KBWj_HApJrk-nJvNpUGeEt-mCYyP-MEJhMIqMMzNUm8/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_9b4063286814c46a606c06389008b5f7.setContent(html_b46c85ae56e306bb894435e0a42d1776);
+        
+
+        marker_236c1fa5f75abf0f867bee72127c633e.bindPopup(popup_9b4063286814c46a606c06389008b5f7)
+        ;
+
+        
+    
+    
+            var marker_9595d916738c34ae5a8f873001ea65e9 = L.marker(
+                [47.677949, 9.173238],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_3061256c707ee76d0e86ddd32bef296e = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e75\u003c/div\u003e\n    "});
+            marker_9595d916738c34ae5a8f873001ea65e9.setIcon(div_icon_3061256c707ee76d0e86ddd32bef296e);
+        
+    
+        var popup_78c41f610c7ee6f6be77f884745e6f98 = L.popup({"maxWidth": 300});
+
+        
+            var html_897750de512194c2cbc1a3c34c540090 = $(`<div id="html_897750de512194c2cbc1a3c34c540090" style="width: 100.0%; height: 100.0%;">     <b>Konstanz</b><br>     <b>Total Score:</b> 72.0%<br>     <b>LGBTQ+ Safety:</b> 25.0%<br>     <b>Cost of Living:</b> 14.5%<br>     <b>Ease of Relocation:</b> 9.5%<br>     <b>Climate Resilience & Comfort:</b> 11.0%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/110CRW3RmCHE4Ivfh8GSReW2I_dicXUb_tt29qRbIT8Y/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_78c41f610c7ee6f6be77f884745e6f98.setContent(html_897750de512194c2cbc1a3c34c540090);
+        
+
+        marker_9595d916738c34ae5a8f873001ea65e9.bindPopup(popup_78c41f610c7ee6f6be77f884745e6f98)
+        ;
+
+        
+    
+    
+            var marker_58b6e74d64df486ba553990b62fab008 = L.marker(
+                [-50.337, -72.2648],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_3aa2603f6433c0a700f7b42c832fc4ae = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e76\u003c/div\u003e\n    "});
+            marker_58b6e74d64df486ba553990b62fab008.setIcon(div_icon_3aa2603f6433c0a700f7b42c832fc4ae);
+        
+    
+        var popup_686c3569ccba2a364e94cd80af78af8b = L.popup({"maxWidth": 300});
+
+        
+            var html_625477f71283a4b6966ffa31ceb180ec = $(`<div id="html_625477f71283a4b6966ffa31ceb180ec" style="width: 100.0%; height: 100.0%;">     <b>El Calafate</b><br>     <b>Total Score:</b> 72.0%<br>     <b>LGBTQ+ Safety:</b> 19.5%<br>     <b>Cost of Living:</b> 16.9%<br>     <b>Ease of Relocation:</b> 12.8%<br>     <b>Climate Resilience & Comfort:</b> 12.2%<br>     <b>Culture & Community:</b> 7.2%<br>     <b>Job Opportunities:</b> 3.4%<br><br>     <a href='https://docs.google.com/document/d/1OYJZ6UBFM_M31hM80BZawv_EsyqvArMWvC3dbIeGXAU/edit?tab=t.7mewyk2y3aaz' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_686c3569ccba2a364e94cd80af78af8b.setContent(html_625477f71283a4b6966ffa31ceb180ec);
+        
+
+        marker_58b6e74d64df486ba553990b62fab008.bindPopup(popup_686c3569ccba2a364e94cd80af78af8b)
+        ;
+
+        
+    
+    
+            var marker_37562ef941a446471a2d35a084dfe2a1 = L.marker(
+                [50.7253, -113.9756],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_51eb49dc115ac239bf755e517da3cc05 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e77\u003c/div\u003e\n    "});
+            marker_37562ef941a446471a2d35a084dfe2a1.setIcon(div_icon_51eb49dc115ac239bf755e517da3cc05);
+        
+    
+        var popup_d7ccec048967a791f1e5914a957b7df9 = L.popup({"maxWidth": 300});
+
+        
+            var html_972d12e0dd03f32618ce613f73a96b9a = $(`<div id="html_972d12e0dd03f32618ce613f73a96b9a" style="width: 100.0%; height: 100.0%;">     <b>Okotoks </b><br>     <b>Total Score:</b> 71.6%<br>     <b>LGBTQ+ Safety:</b> 21.5%<br>     <b>Cost of Living:</b> 17.2%<br>     <b>Ease of Relocation:</b> 13.5%<br>     <b>Climate Resilience & Comfort:</b> 8.3%<br>     <b>Culture & Community:</b> 7.0%<br>     <b>Job Opportunities:</b> 4.1%<br><br>     <a href='https://docs.google.com/document/d/1MwNGqQoh0zNrSlnMtyBJnfBVyXEL9Cvu2qmE8EPXM9k/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_d7ccec048967a791f1e5914a957b7df9.setContent(html_972d12e0dd03f32618ce613f73a96b9a);
+        
+
+        marker_37562ef941a446471a2d35a084dfe2a1.bindPopup(popup_d7ccec048967a791f1e5914a957b7df9)
+        ;
+
+        
+    
+    
+            var marker_a3c59debd613e8d4934b01a7f5795636 = L.marker(
+                [27.7482, -107.6344],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_69a1ea83514d71fe95f663a48762882b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF851B; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e78\u003c/div\u003e\n    "});
+            marker_a3c59debd613e8d4934b01a7f5795636.setIcon(div_icon_69a1ea83514d71fe95f663a48762882b);
+        
+    
+        var popup_b6019ea41704866b6020b34d4d0bcc8d = L.popup({"maxWidth": 300});
+
+        
+            var html_0f8cc9b8c3248bf5fc9dc17ebb2773c1 = $(`<div id="html_0f8cc9b8c3248bf5fc9dc17ebb2773c1" style="width: 100.0%; height: 100.0%;">     <b>Creel</b><br>     <b>Total Score:</b> 71.6%<br>     <b>LGBTQ+ Safety:</b> 16.2%<br>     <b>Cost of Living:</b> 18.6%<br>     <b>Ease of Relocation:</b> 14.5%<br>     <b>Climate Resilience & Comfort:</b> 12.8%<br>     <b>Culture & Community:</b> 7.2%<br>     <b>Job Opportunities:</b> 2.3%<br><br>     <a href='https://docs.google.com/document/d/1w7gELgR0Cl43_zK58_D4gk2WQu7ROHLNlby895oIyvc/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_b6019ea41704866b6020b34d4d0bcc8d.setContent(html_0f8cc9b8c3248bf5fc9dc17ebb2773c1);
+        
+
+        marker_a3c59debd613e8d4934b01a7f5795636.bindPopup(popup_b6019ea41704866b6020b34d4d0bcc8d)
+        ;
+
+        
+    
+    
+            var marker_9722be6f55ed2cb6ec08cab859240ff4 = L.marker(
+                [51.0892, -115.3599],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_7cfaf78300345dd388231b1640a09c2d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e79\u003c/div\u003e\n    "});
+            marker_9722be6f55ed2cb6ec08cab859240ff4.setIcon(div_icon_7cfaf78300345dd388231b1640a09c2d);
+        
+    
+        var popup_e2b559791a5f66a933f3313d912e9a16 = L.popup({"maxWidth": 300});
+
+        
+            var html_08014d2a4b56f12e23cad2c41013cee3 = $(`<div id="html_08014d2a4b56f12e23cad2c41013cee3" style="width: 100.0%; height: 100.0%;">     <b>Canmore </b><br>     <b>Total Score:</b> 71.5%<br>     <b>LGBTQ+ Safety:</b> 22.7%<br>     <b>Cost of Living:</b> 13.5%<br>     <b>Ease of Relocation:</b> 14.1%<br>     <b>Climate Resilience & Comfort:</b> 9.7%<br>     <b>Culture & Community:</b> 7.6%<br>     <b>Job Opportunities:</b> 3.9%<br><br>     <a href='https://docs.google.com/document/d/18OrK_sFhX_KjiULwHSyYcpgaUrVEHNbdtJmYC3pBHI0/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_e2b559791a5f66a933f3313d912e9a16.setContent(html_08014d2a4b56f12e23cad2c41013cee3);
+        
+
+        marker_9722be6f55ed2cb6ec08cab859240ff4.bindPopup(popup_e2b559791a5f66a933f3313d912e9a16)
+        ;
+
+        
+    
+    
+            var marker_0b54195bd00a12ae05a9f5e4759343e2 = L.marker(
+                [-33.2486, -58.0188],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_c75fc5b1adffef51d7e082639523b84b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e80\u003c/div\u003e\n    "});
+            marker_0b54195bd00a12ae05a9f5e4759343e2.setIcon(div_icon_c75fc5b1adffef51d7e082639523b84b);
+        
+    
+        var popup_4d21eee17b80310aa3fb8057816e0a19 = L.popup({"maxWidth": 300});
+
+        
+            var html_14a7da547aafd23150c438a2d59870fd = $(`<div id="html_14a7da547aafd23150c438a2d59870fd" style="width: 100.0%; height: 100.0%;">     <b>Mercedes</b><br>     <b>Total Score:</b> 71.5%<br>     <b>LGBTQ+ Safety:</b> 20.5%<br>     <b>Cost of Living:</b> 16.6%<br>     <b>Ease of Relocation:</b> 13.8%<br>     <b>Climate Resilience & Comfort:</b> 10.3%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 2.8%<br><br>     <a href='https://docs.google.com/document/d/1eUFnyMPjyuZnlB20PIzSBOZW8mgR_onjLrfa8ZaA5Tk/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_4d21eee17b80310aa3fb8057816e0a19.setContent(html_14a7da547aafd23150c438a2d59870fd);
+        
+
+        marker_0b54195bd00a12ae05a9f5e4759343e2.bindPopup(popup_4d21eee17b80310aa3fb8057816e0a19)
+        ;
+
+        
+    
+    
+            var marker_2e87584c7c3988e21488bd69a4a7aa85 = L.marker(
+                [53.246786, 10.414119],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_e4cdddf40992e902ec5076ace452dc7f = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e81\u003c/div\u003e\n    "});
+            marker_2e87584c7c3988e21488bd69a4a7aa85.setIcon(div_icon_e4cdddf40992e902ec5076ace452dc7f);
+        
+    
+        var popup_babaa30d9bf6dfac784f587c8937e762 = L.popup({"maxWidth": 300});
+
+        
+            var html_5243a4d5ca040c74a8cb0b500a4972b1 = $(`<div id="html_5243a4d5ca040c74a8cb0b500a4972b1" style="width: 100.0%; height: 100.0%;">     <b>Lüneburg</b><br>     <b>Total Score:</b> 71.5%<br>     <b>LGBTQ+ Safety:</b> 24.0%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 10.0%<br>     <b>Climate Resilience & Comfort:</b> 10.0%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1GflzRatCxpHGSJMddiiGWYPoNRlYI8gvlaQiucP0z-M/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_babaa30d9bf6dfac784f587c8937e762.setContent(html_5243a4d5ca040c74a8cb0b500a4972b1);
+        
+
+        marker_2e87584c7c3988e21488bd69a4a7aa85.bindPopup(popup_babaa30d9bf6dfac784f587c8937e762)
+        ;
+
+        
+    
+    
+            var marker_e1a20fafb4b269f649c8d337b9e3209a = L.marker(
+                [40.6405, -8.6538],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_37939a0485931307bf0bafbb7a12e38d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e82\u003c/div\u003e\n    "});
+            marker_e1a20fafb4b269f649c8d337b9e3209a.setIcon(div_icon_37939a0485931307bf0bafbb7a12e38d);
+        
+    
+        var popup_0df9498ab7fb92a602901173caf371e4 = L.popup({"maxWidth": 300});
+
+        
+            var html_fac40b17efddf240e7e8a42820e08552 = $(`<div id="html_fac40b17efddf240e7e8a42820e08552" style="width: 100.0%; height: 100.0%;">     <b>Aveiro </b><br>     <b>Total Score:</b> 71.5%<br>     <b>LGBTQ+ Safety:</b> 21.0%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 14.0%<br>     <b>Climate Resilience & Comfort:</b> 11.0%<br>     <b>Culture & Community:</b> 7.0%<br>     <b>Job Opportunities:</b> 2.5%<br><br>     <a href='https://docs.google.com/document/d/1D4X7_73LLNtIGt27bJ9OBZ5O8OGg-2L_7ikPSnEFIaY/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_0df9498ab7fb92a602901173caf371e4.setContent(html_fac40b17efddf240e7e8a42820e08552);
+        
+
+        marker_e1a20fafb4b269f649c8d337b9e3209a.bindPopup(popup_0df9498ab7fb92a602901173caf371e4)
+        ;
+
+        
+    
+    
+            var marker_b367eab6e2c5f51b81877527886f7255 = L.marker(
+                [46.0878, -64.7782],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_430f98e724278196bc5d3ba588a322af = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e83\u003c/div\u003e\n    "});
+            marker_b367eab6e2c5f51b81877527886f7255.setIcon(div_icon_430f98e724278196bc5d3ba588a322af);
+        
+    
+        var popup_36ea451cc8b09d004d36dcb11a2cc7a1 = L.popup({"maxWidth": 300});
+
+        
+            var html_448433e6ed8e7bf1a74cfb91a06bb42f = $(`<div id="html_448433e6ed8e7bf1a74cfb91a06bb42f" style="width: 100.0%; height: 100.0%;">     <b>Moncton </b><br>     <b>Total Score:</b> 71.3%<br>     <b>LGBTQ+ Safety:</b> 22.8%<br>     <b>Cost of Living:</b> 16.7%<br>     <b>Ease of Relocation:</b> 13.2%<br>     <b>Climate Resilience & Comfort:</b> 7.3%<br>     <b>Culture & Community:</b> 7.4%<br>     <b>Job Opportunities:</b> 3.9%<br><br>     <a href='https://docs.google.com/document/d/1imLFbvvvOogSIZSvdd8eLO8daerxvXie4g9igjXHpfM/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_36ea451cc8b09d004d36dcb11a2cc7a1.setContent(html_448433e6ed8e7bf1a74cfb91a06bb42f);
+        
+
+        marker_b367eab6e2c5f51b81877527886f7255.bindPopup(popup_36ea451cc8b09d004d36dcb11a2cc7a1)
+        ;
+
+        
+    
+    
+            var marker_5592dab60e0121a7251c610c518530ed = L.marker(
+                [45.2733, -66.0633],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_2733fc55f9e671a835380ccde07414db = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e84\u003c/div\u003e\n    "});
+            marker_5592dab60e0121a7251c610c518530ed.setIcon(div_icon_2733fc55f9e671a835380ccde07414db);
+        
+    
+        var popup_01956a4766c4570d1aa70b5c5c5e46ff = L.popup({"maxWidth": 300});
+
+        
+            var html_e2b1fdff08efd621f7e504f714f37596 = $(`<div id="html_e2b1fdff08efd621f7e504f714f37596" style="width: 100.0%; height: 100.0%;">     <b>Saint John</b><br>     <b>Total Score:</b> 71.2%<br>     <b>LGBTQ+ Safety:</b> 22.5%<br>     <b>Cost of Living:</b> 16.9%<br>     <b>Ease of Relocation:</b> 13.0%<br>     <b>Climate Resilience & Comfort:</b> 7.8%<br>     <b>Culture & Community:</b> 7.3%<br>     <b>Job Opportunities:</b> 3.7%<br><br>     <a href='https://docs.google.com/document/d/1gTPpdAYPanPIKpo4LP_fJhZ9gO0oIQzHdYI5D4R8Aiw/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_01956a4766c4570d1aa70b5c5c5e46ff.setContent(html_e2b1fdff08efd621f7e504f714f37596);
+        
+
+        marker_5592dab60e0121a7251c610c518530ed.bindPopup(popup_01956a4766c4570d1aa70b5c5c5e46ff)
+        ;
+
+        
+    
+    
+            var marker_e6f6f96e0b33e5314b93ab5440893261 = L.marker(
+                [52.1579, -106.6702],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_3dbacefd47bef6077f018f9153ee19bf = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e85\u003c/div\u003e\n    "});
+            marker_e6f6f96e0b33e5314b93ab5440893261.setIcon(div_icon_3dbacefd47bef6077f018f9153ee19bf);
+        
+    
+        var popup_9fd9695557f3102d50d70a332865a98f = L.popup({"maxWidth": 300});
+
+        
+            var html_770d9514b41858223f838d62caf39048 = $(`<div id="html_770d9514b41858223f838d62caf39048" style="width: 100.0%; height: 100.0%;">     <b>Saskatoon </b><br>     <b>Total Score:</b> 71.0%<br>     <b>LGBTQ+ Safety:</b> 20.3%<br>     <b>Cost of Living:</b> 17.2%<br>     <b>Ease of Relocation:</b> 13.5%<br>     <b>Climate Resilience & Comfort:</b> 8.8%<br>     <b>Culture & Community:</b> 7.0%<br>     <b>Job Opportunities:</b> 4.2%<br><br>     <a href='https://docs.google.com/document/d/1hFpXKqI06ivghGembrATNxolhER2ANoDT7QeM5qk3qI/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_9fd9695557f3102d50d70a332865a98f.setContent(html_770d9514b41858223f838d62caf39048);
+        
+
+        marker_e6f6f96e0b33e5314b93ab5440893261.bindPopup(popup_9fd9695557f3102d50d70a332865a98f)
+        ;
+
+        
+    
+    
+            var marker_2aac5c8000a104f019bf41b607f6983f = L.marker(
+                [52.520008, 13.404954],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_e32322784d0b3e4b01e33db263f929d9 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e86\u003c/div\u003e\n    "});
+            marker_2aac5c8000a104f019bf41b607f6983f.setIcon(div_icon_e32322784d0b3e4b01e33db263f929d9);
+        
+    
+        var popup_91b269c475ae3e3bd527331db0a2699c = L.popup({"maxWidth": 300});
+
+        
+            var html_f3abeb2363600a5ec75bfbf2eb08cce6 = $(`<div id="html_f3abeb2363600a5ec75bfbf2eb08cce6" style="width: 100.0%; height: 100.0%;">     <b>Berlin</b><br>     <b>Total Score:</b> 71.0%<br>     <b>LGBTQ+ Safety:</b> 27.0%<br>     <b>Cost of Living:</b> 12.5%<br>     <b>Ease of Relocation:</b> 10.0%<br>     <b>Climate Resilience & Comfort:</b> 9.0%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1-3whAahxqpKgX2KrKzr862md5halGj0fy32AlX2QaE8/edit?tab=t.7mewyk2y3aaz' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_91b269c475ae3e3bd527331db0a2699c.setContent(html_f3abeb2363600a5ec75bfbf2eb08cce6);
+        
+
+        marker_2aac5c8000a104f019bf41b607f6983f.bindPopup(popup_91b269c475ae3e3bd527331db0a2699c)
+        ;
+
+        
+    
+    
+            var marker_c65cb5df1f3eed94c43a4c8eae4db75a = L.marker(
+                [-36.8485, 174.7633],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_08d8110e258b9934849d4b5c7611169c = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e87\u003c/div\u003e\n    "});
+            marker_c65cb5df1f3eed94c43a4c8eae4db75a.setIcon(div_icon_08d8110e258b9934849d4b5c7611169c);
+        
+    
+        var popup_db22b37abfe104377b78b2d0b3799c73 = L.popup({"maxWidth": 300});
+
+        
+            var html_2532e7d15bf6822fb9a57b0e9ddb441e = $(`<div id="html_2532e7d15bf6822fb9a57b0e9ddb441e" style="width: 100.0%; height: 100.0%;">     <b>Auckland </b><br>     <b>Total Score:</b> 70.9%<br>     <b>LGBTQ+ Safety:</b> 27.3%<br>     <b>Cost of Living:</b> 10.8%<br>     <b>Ease of Relocation:</b> 10.0%<br>     <b>Climate Resilience & Comfort:</b> 9.3%<br>     <b>Culture & Community:</b> 9.5%<br>     <b>Job Opportunities:</b> 4.0%<br><br>     <a href='https://docs.google.com/document/d/1Y0y3lfszYnxU2TwXljNP0gvuygt8fecZvPZu-MLmbWw/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_db22b37abfe104377b78b2d0b3799c73.setContent(html_2532e7d15bf6822fb9a57b0e9ddb441e);
+        
+
+        marker_c65cb5df1f3eed94c43a4c8eae4db75a.bindPopup(popup_db22b37abfe104377b78b2d0b3799c73)
+        ;
+
+        
+    
+    
+            var marker_f00d8e54ac6bc47aa047657d433a7866 = L.marker(
+                [49.6841, -124.9905],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_da134fec1633fb7bfd81cf7d81c4539d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e88\u003c/div\u003e\n    "});
+            marker_f00d8e54ac6bc47aa047657d433a7866.setIcon(div_icon_da134fec1633fb7bfd81cf7d81c4539d);
+        
+    
+        var popup_09a7971594417d484909949e38fed254 = L.popup({"maxWidth": 300});
+
+        
+            var html_b91b1f8d15c9e40ad769c56621d59552 = $(`<div id="html_b91b1f8d15c9e40ad769c56621d59552" style="width: 100.0%; height: 100.0%;">     <b>Courtenay/Comox </b><br>     <b>Total Score:</b> 70.8%<br>     <b>LGBTQ+ Safety:</b> 24.0%<br>     <b>Cost of Living:</b> 14.8%<br>     <b>Ease of Relocation:</b> 13.2%<br>     <b>Climate Resilience & Comfort:</b> 7.5%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.8%<br><br>     <a href='https://docs.google.com/document/d/1zyktSmqjjimlnLhEeJDIGpGwj6Tpm4i6-oqyJ0EXMIA/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_09a7971594417d484909949e38fed254.setContent(html_b91b1f8d15c9e40ad769c56621d59552);
+        
+
+        marker_f00d8e54ac6bc47aa047657d433a7866.bindPopup(popup_09a7971594417d484909949e38fed254)
+        ;
+
+        
+    
+    
+            var marker_c2f32863568544bf1b8082eda4d06c9d = L.marker(
+                [50.6745, -120.3273],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_398fd0b904b3b3f5e5607697fc696f3f = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e89\u003c/div\u003e\n    "});
+            marker_c2f32863568544bf1b8082eda4d06c9d.setIcon(div_icon_398fd0b904b3b3f5e5607697fc696f3f);
+        
+    
+        var popup_61872d37a588750ac43ead6f873742e4 = L.popup({"maxWidth": 300});
+
+        
+            var html_f951572e504d457371f1d5f3b4365169 = $(`<div id="html_f951572e504d457371f1d5f3b4365169" style="width: 100.0%; height: 100.0%;">     <b>Kamloops </b><br>     <b>Total Score:</b> 70.5%<br>     <b>LGBTQ+ Safety:</b> 23.5%<br>     <b>Cost of Living:</b> 15.6%<br>     <b>Ease of Relocation:</b> 13.7%<br>     <b>Climate Resilience & Comfort:</b> 6.5%<br>     <b>Culture & Community:</b> 7.3%<br>     <b>Job Opportunities:</b> 3.9%<br><br>     <a href='https://docs.google.com/document/d/1h_r7tiPzS0RhUChatMqrX4SbZV15s3eE8cGnZTOoE9U/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_61872d37a588750ac43ead6f873742e4.setContent(html_f951572e504d457371f1d5f3b4365169);
+        
+
+        marker_c2f32863568544bf1b8082eda4d06c9d.bindPopup(popup_61872d37a588750ac43ead6f873742e4)
+        ;
+
+        
+    
+    
+            var marker_2d5fc58ce85c45c7a2d5d89c10756d00 = L.marker(
+                [52.030228, 8.532471],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_d14c4a3a234de11bb61bec38c550caf6 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e90\u003c/div\u003e\n    "});
+            marker_2d5fc58ce85c45c7a2d5d89c10756d00.setIcon(div_icon_d14c4a3a234de11bb61bec38c550caf6);
+        
+    
+        var popup_8e393371803fda99d6bbb3420c237020 = L.popup({"maxWidth": 300});
+
+        
+            var html_f8c4a26c09c6dbc65c666896c90874db = $(`<div id="html_f8c4a26c09c6dbc65c666896c90874db" style="width: 100.0%; height: 100.0%;">     <b>Bielefeld</b><br>     <b>Total Score:</b> 70.5%<br>     <b>LGBTQ+ Safety:</b> 24.0%<br>     <b>Cost of Living:</b> 16.0%<br>     <b>Ease of Relocation:</b> 9.5%<br>     <b>Climate Resilience & Comfort:</b> 10.0%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1HG_WtVR6PhSopXg9pznLSharNPVd_2aWp7h_KtEMziw/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_8e393371803fda99d6bbb3420c237020.setContent(html_f8c4a26c09c6dbc65c666896c90874db);
+        
+
+        marker_2d5fc58ce85c45c7a2d5d89c10756d00.bindPopup(popup_8e393371803fda99d6bbb3420c237020)
+        ;
+
+        
+    
+    
+            var marker_62636809eb6548c7f1ff2017c8761a77 = L.marker(
+                [-41.2865, 174.7762],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_82d5257cea1265b7a12c6a4114e8500d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e91\u003c/div\u003e\n    "});
+            marker_62636809eb6548c7f1ff2017c8761a77.setIcon(div_icon_82d5257cea1265b7a12c6a4114e8500d);
+        
+    
+        var popup_a7b6b737682f749411040c1c33026534 = L.popup({"maxWidth": 300});
+
+        
+            var html_834f1cb3eb5c907546a1344f0112e13a = $(`<div id="html_834f1cb3eb5c907546a1344f0112e13a" style="width: 100.0%; height: 100.0%;">     <b>Wellington </b><br>     <b>Total Score:</b> 70.0%<br>     <b>LGBTQ+ Safety:</b> 27.0%<br>     <b>Cost of Living:</b> 11.5%<br>     <b>Ease of Relocation:</b> 9.5%<br>     <b>Climate Resilience & Comfort:</b> 9.5%<br>     <b>Culture & Community:</b> 9.0%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/12T-9KBc230Y4DfRDPC7LkWTvy17upv9Z-tNGmIzgXhQ/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_a7b6b737682f749411040c1c33026534.setContent(html_834f1cb3eb5c907546a1344f0112e13a);
+        
+
+        marker_62636809eb6548c7f1ff2017c8761a77.bindPopup(popup_a7b6b737682f749411040c1c33026534)
+        ;
+
+        
+    
+    
+            var marker_5296e30570c1c8a9beebccd1a258f422 = L.marker(
+                [38.5714, -7.9135],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_2d578226f95e7449c6d570b041cc0387 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e92\u003c/div\u003e\n    "});
+            marker_5296e30570c1c8a9beebccd1a258f422.setIcon(div_icon_2d578226f95e7449c6d570b041cc0387);
+        
+    
+        var popup_649d6178ed53ab73a80196e9aff37cb2 = L.popup({"maxWidth": 300});
+
+        
+            var html_7093e66269f6a4fa4a79265e1df8613b = $(`<div id="html_7093e66269f6a4fa4a79265e1df8613b" style="width: 100.0%; height: 100.0%;">     <b>Évora</b><br>     <b>Total Score:</b> 69.5%<br>     <b>LGBTQ+ Safety:</b> 18.6%<br>     <b>Cost of Living:</b> 17.5%<br>     <b>Ease of Relocation:</b> 13.5%<br>     <b>Climate Resilience & Comfort:</b> 9.5%<br>     <b>Culture & Community:</b> 7.0%<br>     <b>Job Opportunities:</b> 3.0%<br><br>     <a href='https://docs.google.com/document/d/1f_BiBqMvEJNCXlCWe3lRDdDAw-vyRlpV2PtMnMMmrSA/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_649d6178ed53ab73a80196e9aff37cb2.setContent(html_7093e66269f6a4fa4a79265e1df8613b);
+        
+
+        marker_5296e30570c1c8a9beebccd1a258f422.bindPopup(popup_649d6178ed53ab73a80196e9aff37cb2)
+        ;
+
+        
+    
+    
+            var marker_c74d00ab81d039a88075baadcd55df75 = L.marker(
+                [47.5615, -52.7126],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_27ebaaa02d2dcfad89291f93e8d96cd5 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e93\u003c/div\u003e\n    "});
+            marker_c74d00ab81d039a88075baadcd55df75.setIcon(div_icon_27ebaaa02d2dcfad89291f93e8d96cd5);
+        
+    
+        var popup_f6dfc9d053e95f468e945576bbfda5fd = L.popup({"maxWidth": 300});
+
+        
+            var html_2a9c673f9eb1aaf0622f866e922ba190 = $(`<div id="html_2a9c673f9eb1aaf0622f866e922ba190" style="width: 100.0%; height: 100.0%;">     <b>St. John’s</b><br>     <b>Total Score:</b> 69.3%<br>     <b>LGBTQ+ Safety:</b> 22.0%<br>     <b>Cost of Living:</b> 16.8%<br>     <b>Ease of Relocation:</b> 12.5%<br>     <b>Climate Resilience & Comfort:</b> 7.0%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.5%<br><br>     <a href='https://docs.google.com/document/d/1CGYqaMY0XkMTx5fUF8KOxeMV-Kev7o_il2x38CtKVbU/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_f6dfc9d053e95f468e945576bbfda5fd.setContent(html_2a9c673f9eb1aaf0622f866e922ba190);
+        
+
+        marker_c74d00ab81d039a88075baadcd55df75.bindPopup(popup_f6dfc9d053e95f468e945576bbfda5fd)
+        ;
+
+        
+    
+    
+            var marker_d1b24011c25e96fe21a5e1a3cc7b0d2d = L.marker(
+                [-31.7333, -55.9833],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_e811e68dd7ea83b62c020736b71fce83 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e94\u003c/div\u003e\n    "});
+            marker_d1b24011c25e96fe21a5e1a3cc7b0d2d.setIcon(div_icon_e811e68dd7ea83b62c020736b71fce83);
+        
+    
+        var popup_a2f1acf7ea41eb316dbd3d5f1e8f7457 = L.popup({"maxWidth": 300});
+
+        
+            var html_b8ce55e1e88a73858fc82cf9711c726e = $(`<div id="html_b8ce55e1e88a73858fc82cf9711c726e" style="width: 100.0%; height: 100.0%;">     <b>Tacuarembó </b><br>     <b>Total Score:</b> 68.8%<br>     <b>LGBTQ+ Safety:</b> 19.8%<br>     <b>Cost of Living:</b> 17.2%<br>     <b>Ease of Relocation:</b> 12.2%<br>     <b>Climate Resilience & Comfort:</b> 10.2%<br>     <b>Culture & Community:</b> 6.8%<br>     <b>Job Opportunities:</b> 2.6%<br><br>     <a href='https://docs.google.com/document/d/1ZszSh4PbSt1ErDRcpxTx94r6jI0yiuytAcIvoxKlJHo/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_a2f1acf7ea41eb316dbd3d5f1e8f7457.setContent(html_b8ce55e1e88a73858fc82cf9711c726e);
+        
+
+        marker_d1b24011c25e96fe21a5e1a3cc7b0d2d.bindPopup(popup_a2f1acf7ea41eb316dbd3d5f1e8f7457)
+        ;
+
+        
+    
+    
+            var marker_9b887a0839b51ceb43bc5336a4b56671 = L.marker(
+                [-45.8788, 170.5028],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_de1dc88dadcc0cb6536919442e457a5d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e95\u003c/div\u003e\n    "});
+            marker_9b887a0839b51ceb43bc5336a4b56671.setIcon(div_icon_de1dc88dadcc0cb6536919442e457a5d);
+        
+    
+        var popup_32678e733bb28771b78f3c739a8f9781 = L.popup({"maxWidth": 300});
+
+        
+            var html_572c7920104c6f9f22170296ef9bd337 = $(`<div id="html_572c7920104c6f9f22170296ef9bd337" style="width: 100.0%; height: 100.0%;">     <b>Dunedin </b><br>     <b>Total Score:</b> 68.2%<br>     <b>LGBTQ+ Safety:</b> 24.5%<br>     <b>Cost of Living:</b> 12.3%<br>     <b>Ease of Relocation:</b> 8.5%<br>     <b>Climate Resilience & Comfort:</b> 11.5%<br>     <b>Culture & Community:</b> 8.7%<br>     <b>Job Opportunities:</b> 2.7%<br><br>     <a href='https://docs.google.com/document/d/10nWtcPmh-5huenQhAUYieP2kAOX7ZEZAGfaZjdz7e3I/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_32678e733bb28771b78f3c739a8f9781.setContent(html_572c7920104c6f9f22170296ef9bd337);
+        
+
+        marker_9b887a0839b51ceb43bc5336a4b56671.bindPopup(popup_32678e733bb28771b78f3c739a8f9781)
+        ;
+
+        
+    
+    
+            var marker_c3a06dbf0748b9e9e8c354e614c29e36 = L.marker(
+                [-40.9817, 174.9628],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_e952a465732884f545671fc0abdd79d3 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e96\u003c/div\u003e\n    "});
+            marker_c3a06dbf0748b9e9e8c354e614c29e36.setIcon(div_icon_e952a465732884f545671fc0abdd79d3);
+        
+    
+        var popup_df120b5aec1d6bf44c07f70b748a2653 = L.popup({"maxWidth": 300});
+
+        
+            var html_3e1275aa453e3e30b01c94c03215a884 = $(`<div id="html_3e1275aa453e3e30b01c94c03215a884" style="width: 100.0%; height: 100.0%;">     <b>Paekākāriki </b><br>     <b>Total Score:</b> 67.9%<br>     <b>LGBTQ+ Safety:</b> 25.8%<br>     <b>Cost of Living:</b> 11.2%<br>     <b>Ease of Relocation:</b> 9.0%<br>     <b>Climate Resilience & Comfort:</b> 10.3%<br>     <b>Culture & Community:</b> 8.8%<br>     <b>Job Opportunities:</b> 2.8%<br><br>     <a href='https://docs.google.com/document/d/1mYl0KuUQ05oZCm0BB_Q3HwJlfHqonNGGZEpDGlLFALk/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_df120b5aec1d6bf44c07f70b748a2653.setContent(html_3e1275aa453e3e30b01c94c03215a884);
+        
+
+        marker_c3a06dbf0748b9e9e8c354e614c29e36.bindPopup(popup_df120b5aec1d6bf44c07f70b748a2653)
+        ;
+
+        
+    
+    
+            var marker_2a07b823951c0e8ee3669bdac93f7379 = L.marker(
+                [-41.2706, 173.2836],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_9ae2b47fb7560eb66164c230dd756efe = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e97\u003c/div\u003e\n    "});
+            marker_2a07b823951c0e8ee3669bdac93f7379.setIcon(div_icon_9ae2b47fb7560eb66164c230dd756efe);
+        
+    
+        var popup_aba6dcffe3625e44e154b046c09ba018 = L.popup({"maxWidth": 300});
+
+        
+            var html_9db288d185321c1e8b7cfc62f294f34c = $(`<div id="html_9db288d185321c1e8b7cfc62f294f34c" style="width: 100.0%; height: 100.0%;">     <b>Nelson</b><br>     <b>Total Score:</b> 67.6%<br>     <b>LGBTQ+ Safety:</b> 24.6%<br>     <b>Cost of Living:</b> 11.6%<br>     <b>Ease of Relocation:</b> 9.2%<br>     <b>Climate Resilience & Comfort:</b> 11.2%<br>     <b>Culture & Community:</b> 8.5%<br>     <b>Job Opportunities:</b> 2.5%<br><br>     <a href='https://docs.google.com/document/d/1A2T3UZ2B1f6XZ0xH0kTNslXFRPTpo6AWfngr88Vz01s/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_aba6dcffe3625e44e154b046c09ba018.setContent(html_9db288d185321c1e8b7cfc62f294f34c);
+        
+
+        marker_2a07b823951c0e8ee3669bdac93f7379.bindPopup(popup_aba6dcffe3625e44e154b046c09ba018)
+        ;
+
+        
+    
+    
+            var marker_0994470a699029185271408cedd25f2c = L.marker(
+                [-43.5321, 172.6362],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_964248210af580afbf9f2b6aa9f133d7 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e98\u003c/div\u003e\n    "});
+            marker_0994470a699029185271408cedd25f2c.setIcon(div_icon_964248210af580afbf9f2b6aa9f133d7);
+        
+    
+        var popup_48b0e52866f50c17e8fec01eba05a7bd = L.popup({"maxWidth": 300});
+
+        
+            var html_20d27df22615acf0be046cf1a2d8c4c6 = $(`<div id="html_20d27df22615acf0be046cf1a2d8c4c6" style="width: 100.0%; height: 100.0%;">     <b>Christchurch </b><br>     <b>Total Score:</b> 66.5%<br>     <b>LGBTQ+ Safety:</b> 24.0%<br>     <b>Cost of Living:</b> 11.8%<br>     <b>Ease of Relocation:</b> 9.7%<br>     <b>Climate Resilience & Comfort:</b> 9.8%<br>     <b>Culture & Community:</b> 8.2%<br>     <b>Job Opportunities:</b> 3.0%<br><br>     <a href='https://docs.google.com/document/d/155OTIM-oVCvgpHigyrRs9_byriHhWjCVOVRu20_wAJw/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_48b0e52866f50c17e8fec01eba05a7bd.setContent(html_20d27df22615acf0be046cf1a2d8c4c6);
+        
+
+        marker_0994470a699029185271408cedd25f2c.bindPopup(popup_48b0e52866f50c17e8fec01eba05a7bd)
+        ;
+
+        
+    
+    
+            var marker_27d29618918262e9c3853ba8361de88e = L.marker(
+                [-37.787, 175.2793],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_81546f9ea25bc5017fefdff7288ebf7d = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e99\u003c/div\u003e\n    "});
+            marker_27d29618918262e9c3853ba8361de88e.setIcon(div_icon_81546f9ea25bc5017fefdff7288ebf7d);
+        
+    
+        var popup_1f2bac3bea8211e6f701b57a5884563e = L.popup({"maxWidth": 300});
+
+        
+            var html_0e512d4dd9bca924713d3fd933f00527 = $(`<div id="html_0e512d4dd9bca924713d3fd933f00527" style="width: 100.0%; height: 100.0%;">     <b>Hamilton </b><br>     <b>Total Score:</b> 66.0%<br>     <b>LGBTQ+ Safety:</b> 22.8%<br>     <b>Cost of Living:</b> 12.6%<br>     <b>Ease of Relocation:</b> 9.3%<br>     <b>Climate Resilience & Comfort:</b> 10.5%<br>     <b>Culture & Community:</b> 7.5%<br>     <b>Job Opportunities:</b> 3.3%<br><br>     <a href='https://docs.google.com/document/d/116fWQ3jBb2SgV4v4CRsIvXSDqi3J9779aFJ0n-RD0FA/edit?tab=t.8pbcj643ol4s' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_1f2bac3bea8211e6f701b57a5884563e.setContent(html_0e512d4dd9bca924713d3fd933f00527);
+        
+
+        marker_27d29618918262e9c3853ba8361de88e.bindPopup(popup_1f2bac3bea8211e6f701b57a5884563e)
+        ;
+
+        
+    
+    
+            var marker_233217ca83c42ba068943553b3df4e99 = L.marker(
+                [-37.8005, 174.8718],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_c4ace45de5ea2326ee2e6490abf86dad = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e100\u003c/div\u003e\n    "});
+            marker_233217ca83c42ba068943553b3df4e99.setIcon(div_icon_c4ace45de5ea2326ee2e6490abf86dad);
+        
+    
+        var popup_8f8a53014fcf2b60e3d84ec59c2be0b5 = L.popup({"maxWidth": 300});
+
+        
+            var html_d0f5d2047935c68678f3d881064c2a65 = $(`<div id="html_d0f5d2047935c68678f3d881064c2a65" style="width: 100.0%; height: 100.0%;">     <b>Raglan </b><br>     <b>Total Score:</b> 65.9%<br>     <b>LGBTQ+ Safety:</b> 24.3%<br>     <b>Cost of Living:</b> 11.2%<br>     <b>Ease of Relocation:</b> 8.8%<br>     <b>Climate Resilience & Comfort:</b> 10.8%<br>     <b>Culture & Community:</b> 8.3%<br>     <b>Job Opportunities:</b> 2.5%<br><br>     <a href='https://docs.google.com/document/d/16vE7c117eN9d9qTHXu2YgiEZhBVTta68Ju-fH-mnIAM/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_8f8a53014fcf2b60e3d84ec59c2be0b5.setContent(html_d0f5d2047935c68678f3d881064c2a65);
+        
+
+        marker_233217ca83c42ba068943553b3df4e99.bindPopup(popup_8f8a53014fcf2b60e3d84ec59c2be0b5)
+        ;
+
+        
+    
+    
+            var marker_607e2d537e91f503f9be1d49180da8cc = L.marker(
+                [-38.1368, 176.2497],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_8ef56d4d482975e8c29641cf80d4256f = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e101\u003c/div\u003e\n    "});
+            marker_607e2d537e91f503f9be1d49180da8cc.setIcon(div_icon_8ef56d4d482975e8c29641cf80d4256f);
+        
+    
+        var popup_fe983546fe8c8d9ff69fb638cfbeda84 = L.popup({"maxWidth": 300});
+
+        
+            var html_6da72f3dd40fa484bc9ac7d302275fe1 = $(`<div id="html_6da72f3dd40fa484bc9ac7d302275fe1" style="width: 100.0%; height: 100.0%;">     <b>Rotorua </b><br>     <b>Total Score:</b> 65.4%<br>     <b>LGBTQ+ Safety:</b> 21.6%<br>     <b>Cost of Living:</b> 13.0%<br>     <b>Ease of Relocation:</b> 9.2%<br>     <b>Climate Resilience & Comfort:</b> 9.8%<br>     <b>Culture & Community:</b> 8.4%<br>     <b>Job Opportunities:</b> 3.4%<br><br>     <a href='https://docs.google.com/document/d/1LBoBvXmAfG0tV6a3DgHCpvay5QoJG6ACxq4vn8y-M-Q/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_fe983546fe8c8d9ff69fb638cfbeda84.setContent(html_6da72f3dd40fa484bc9ac7d302275fe1);
+        
+
+        marker_607e2d537e91f503f9be1d49180da8cc.bindPopup(popup_fe983546fe8c8d9ff69fb638cfbeda84)
+        ;
+
+        
+    
+    
+            var marker_df610cfdd36dbd5f7ee54534442e3e17 = L.marker(
+                [-39.0556, 174.0752],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_d0df9db8df68e6e6a65b6ced3a674842 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e102\u003c/div\u003e\n    "});
+            marker_df610cfdd36dbd5f7ee54534442e3e17.setIcon(div_icon_d0df9db8df68e6e6a65b6ced3a674842);
+        
+    
+        var popup_1a72dcb44ebf6751a6648e2444055e91 = L.popup({"maxWidth": 300});
+
+        
+            var html_0ba29c5ddb35f278e740ea918d380420 = $(`<div id="html_0ba29c5ddb35f278e740ea918d380420" style="width: 100.0%; height: 100.0%;">     <b>New Plymouth</b><br>     <b>Total Score:</b> 64.6%<br>     <b>LGBTQ+ Safety:</b> 21.3%<br>     <b>Cost of Living:</b> 12.5%<br>     <b>Ease of Relocation:</b> 9.0%<br>     <b>Climate Resilience & Comfort:</b> 10.5%<br>     <b>Culture & Community:</b> 8.2%<br>     <b>Job Opportunities:</b> 3.1%<br><br>     <a href='https://docs.google.com/document/d/1CXiMw9HzBsHhMCfIRSBvCW-Jtw03j12R3cDt9vpApUg/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_1a72dcb44ebf6751a6648e2444055e91.setContent(html_0ba29c5ddb35f278e740ea918d380420);
+        
+
+        marker_df610cfdd36dbd5f7ee54534442e3e17.bindPopup(popup_1a72dcb44ebf6751a6648e2444055e91)
+        ;
+
+        
+    
+    
+            var marker_1ab6f4b23378d1f12f0c138125f382e7 = L.marker(
+                [-39.4928, 176.912],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_e62c4a38e461aa5068e05e288c40b030 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e103\u003c/div\u003e\n    "});
+            marker_1ab6f4b23378d1f12f0c138125f382e7.setIcon(div_icon_e62c4a38e461aa5068e05e288c40b030);
+        
+    
+        var popup_33388066aac88937927cab75eb153843 = L.popup({"maxWidth": 300});
+
+        
+            var html_4f0ee08ee59ccdc09354740bf7c7f041 = $(`<div id="html_4f0ee08ee59ccdc09354740bf7c7f041" style="width: 100.0%; height: 100.0%;">     <b>Napier</b><br>     <b>Total Score:</b> 64.3%<br>     <b>LGBTQ+ Safety:</b> 21.9%<br>     <b>Cost of Living:</b> 12.1%<br>     <b>Ease of Relocation:</b> 9.0%<br>     <b>Climate Resilience & Comfort:</b> 10.2%<br>     <b>Culture & Community:</b> 8.1%<br>     <b>Job Opportunities:</b> 3.0%<br><br>     <a href='https://docs.google.com/document/d/1cC2HBKVgYqAHJKswRyfO1SNNRyZXG2mi-csGZ5Volbk/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_33388066aac88937927cab75eb153843.setContent(html_4f0ee08ee59ccdc09354740bf7c7f041);
+        
+
+        marker_1ab6f4b23378d1f12f0c138125f382e7.bindPopup(popup_33388066aac88937927cab75eb153843)
+        ;
+
+        
+    
+    
+            var marker_9ed9c7f0219aa04bc9fb5ab8ee3925e6 = L.marker(
+                [-45.0312, 168.6626],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_cfb1512f01056fe7124d77d1b7121107 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e104\u003c/div\u003e\n    "});
+            marker_9ed9c7f0219aa04bc9fb5ab8ee3925e6.setIcon(div_icon_cfb1512f01056fe7124d77d1b7121107);
+        
+    
+        var popup_dcf548ae7d364cb8f60f89b62c09854c = L.popup({"maxWidth": 300});
+
+        
+            var html_58dfbe3c5378acbd1f71b064634f8cf6 = $(`<div id="html_58dfbe3c5378acbd1f71b064634f8cf6" style="width: 100.0%; height: 100.0%;">     <b>Queenstown</b><br>     <b>Total Score:</b> 64.1%<br>     <b>LGBTQ+ Safety:</b> 23.4%<br>     <b>Cost of Living:</b> 10.5%<br>     <b>Ease of Relocation:</b> 8.7%<br>     <b>Climate Resilience & Comfort:</b> 10.8%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 2.7%<br><br>     <a href='https://docs.google.com/document/d/1nmWQbFe2p5VSw0oZwe5Xr9Y1ILSgbR-44_qWC4PhxcM/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_dcf548ae7d364cb8f60f89b62c09854c.setContent(html_58dfbe3c5378acbd1f71b064634f8cf6);
+        
+
+        marker_9ed9c7f0219aa04bc9fb5ab8ee3925e6.bindPopup(popup_dcf548ae7d364cb8f60f89b62c09854c)
+        ;
+
+        
+    
+    
+            var marker_d184fef8a310251ac24a676e7d72ba8d = L.marker(
+                [-37.6878, 176.1651],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_16c6fe37ec8d0f4013ba14f17e632c6b = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e105\u003c/div\u003e\n    "});
+            marker_d184fef8a310251ac24a676e7d72ba8d.setIcon(div_icon_16c6fe37ec8d0f4013ba14f17e632c6b);
+        
+    
+        var popup_1d41ad92a81c8dcbe9d7e5e476d7ce9a = L.popup({"maxWidth": 300});
+
+        
+            var html_70375ad538614c419dafc2e74f27077d = $(`<div id="html_70375ad538614c419dafc2e74f27077d" style="width: 100.0%; height: 100.0%;">     <b>Tauranga </b><br>     <b>Total Score:</b> 63.3%<br>     <b>LGBTQ+ Safety:</b> 21.0%<br>     <b>Cost of Living:</b> 11.4%<br>     <b>Ease of Relocation:</b> 9.1%<br>     <b>Climate Resilience & Comfort:</b> 10.7%<br>     <b>Culture & Community:</b> 7.8%<br>     <b>Job Opportunities:</b> 3.3%<br><br>     <a href='https://docs.google.com/document/d/1wdbo3A6K2MGN0pRWg-1-OSs0V2FbsNumKHnx_5V-OR8/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_1d41ad92a81c8dcbe9d7e5e476d7ce9a.setContent(html_70375ad538614c419dafc2e74f27077d);
+        
+
+        marker_d184fef8a310251ac24a676e7d72ba8d.bindPopup(popup_1d41ad92a81c8dcbe9d7e5e476d7ce9a)
+        ;
+
+        
+    
+    
+            var marker_62b9ab5c05947ca3a4a2606c6a433f2b = L.marker(
+                [-44.6981, 169.133],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_77373dbd5c34374213552ff71b9f710f = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e106\u003c/div\u003e\n    "});
+            marker_62b9ab5c05947ca3a4a2606c6a433f2b.setIcon(div_icon_77373dbd5c34374213552ff71b9f710f);
+        
+    
+        var popup_bb9b03791a7e2f955abcf01daac148ac = L.popup({"maxWidth": 300});
+
+        
+            var html_7006ea965df80a1ae8d926f6cc629cd8 = $(`<div id="html_7006ea965df80a1ae8d926f6cc629cd8" style="width: 100.0%; height: 100.0%;">     <b>Wanaka </b><br>     <b>Total Score:</b> 63.1%<br>     <b>LGBTQ+ Safety:</b> 22.2%<br>     <b>Cost of Living:</b> 10.3%<br>     <b>Ease of Relocation:</b> 8.5%<br>     <b>Climate Resilience & Comfort:</b> 11.3%<br>     <b>Culture & Community:</b> 8.0%<br>     <b>Job Opportunities:</b> 2.8%<br><br>     <a href='https://docs.google.com/document/d/1EK8iVo8JEeaSpPaFOsp1dz5RQV3uYeZj0AM9Lyfwrw4/edit?usp=sharing' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_bb9b03791a7e2f955abcf01daac148ac.setContent(html_7006ea965df80a1ae8d926f6cc629cd8);
+        
+
+        marker_62b9ab5c05947ca3a4a2606c6a433f2b.bindPopup(popup_bb9b03791a7e2f955abcf01daac148ac)
+        ;
+
+        
+    
+    
+            var marker_95b532f219493c894e0fee49b2ed34b6 = L.marker(
+                [-42.4507, 171.2108],
+                {}
+            ).addTo(marker_cluster_aa3ee8408120548f42f98164336988d4);
+        
+    
+            var div_icon_85f562003ec2dba5970edc035e7943ac = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"font-size: 12px; color: white; background: #FF4136; \n                border-radius: 50%; width: 28px; height: 28px; text-align: center; \n                line-height: 28px; font-weight: bold;\"\u003e107\u003c/div\u003e\n    "});
+            marker_95b532f219493c894e0fee49b2ed34b6.setIcon(div_icon_85f562003ec2dba5970edc035e7943ac);
+        
+    
+        var popup_9da86e95d8f8db329cbb829701d89d3e = L.popup({"maxWidth": 300});
+
+        
+            var html_a559cd2b20f49d5a766c91cfd6088bc8 = $(`<div id="html_a559cd2b20f49d5a766c91cfd6088bc8" style="width: 100.0%; height: 100.0%;">     <b>Greymouth </b><br>     <b>Total Score:</b> 60.8%<br>     <b>LGBTQ+ Safety:</b> 19.8%<br>     <b>Cost of Living:</b> 14.0%<br>     <b>Ease of Relocation:</b> 9.0%<br>     <b>Climate Resilience & Comfort:</b> 8.5%<br>     <b>Culture & Community:</b> 7.0%<br>     <b>Job Opportunities:</b> 2.5%<br><br>     <a href='https://docs.google.com/document/d/14OhZ6pGG8k3_XEQSij52wY6X__eeJcL7da7v3TYjYBA/edit?tab=t.98cd4hgvwuna' target='_blank'><b>👉 Click here for full details</b></a>     </div>`)[0];
+            popup_9da86e95d8f8db329cbb829701d89d3e.setContent(html_a559cd2b20f49d5a766c91cfd6088bc8);
+        
+
+        marker_95b532f219493c894e0fee49b2ed34b6.bindPopup(popup_9da86e95d8f8db329cbb829701d89d3e)
+        ;
+
+        
+    
+</script>
+</html>
